@@ -3,7 +3,7 @@
 ?>
 
 <main>
-<form action="" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
+<form action="includes/register.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
         <div class="sections">
             <h1 class="h1">Personal Details</h1>
             <div class="fields-group">
@@ -24,7 +24,7 @@
             <div class="fields-group">
                 <div class="fields">
                     <label for="title">Title:</label>
-                    <select id="title" class="inputs">
+                    <select id="title" class="inputs" name="tittle">
                         <option value="mr">Mr.</option>
                         <option value="ms">Ms.</option>
                         <option value="mrs">Mrs.</option>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="fields">
                     <label for="gender">Gender:</label>
-                    <select id="gender" class="inputs">
+                    <select id="gender" name="gender" class="inputs">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="fields">
                     <label for="race">Race:</label>
-                    <select id="race" class="inputs">
+                    <select id="race" name="race" class="inputs">
                         <option value="african">African</option>
                         <option value="caucasian">Caucasian</option>
                         <option value="asian">Asian</option>
@@ -90,9 +90,18 @@
             </div>
         </div>
 
+        <div class="field">
+            <label for="password">Password:</label>
+            <input type="password" class="input" id="password" name="password" placeholder="Enter your password">
+        </div><br>
+        <div class="field">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" class="input" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+        </div><br>
+
         <div class="button-groups">
             <input type="button" value="Back to Start" class="back-button">
-            <input type="submit" value="Continue Application" class="submit-button">
+            <input type="submit" value="Continue Application" name="submit" class="submit-button">
         </div>
     </form>
 </main>
