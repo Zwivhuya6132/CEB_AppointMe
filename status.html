@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slide.css">
+    <title>Tutorial</title>
+    <style>
+    table {
+      width: 50%;
+      margin: auto;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .cancel-button,
+    .reject-button {
+      padding: 6px 12px;
+      font-size: 14px;
+      background-color: #e65300;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .cancel-button:hover,
+    .reject-button:hover{
+        border: 2px solid #e65300;
+        background-color: #ffffff;
+        color: #e65300;
+    }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="head-left">
+            <img src="images/uj.png" alt="uj logo" class="logo">
+            
+            <ul class="nav-links">
+                <li><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log-out</li>
+                <li><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;Help</li>
+                <li><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Notification</li>
+            </ul>
+        </div>
+
+        <div class="head-right">
+
+            <small>
+                <p>Welcome Mr Z Davhana</p>
+                <p> zwivhuyadavhana6132@gmail.com </p>
+            </small>
+
+            <small class="big-ulink">
+                 <h1>Ulink</h1>
+            </small>
+
+        </div>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="slide">
+          <img src="images/uj.png" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="images/download (1).jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+          <img src="images/download.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+          <img src="images/download.png" alt="Slide 3">
+        </div>
+    </div>
+
+    <h1 style="text-align: center; font-size: 35px;">Appoint Me</h1>
+
+    <table>
+        <thead>
+          <tr>
+            <th>Student number</th>
+            <th>Initials and Surname</th>
+            <th>Application date</th>
+            <th>Status</th>
+            <th>Last action</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>218007280</td>
+            <td>Z Davhana</td>
+            <td>2023-05-28</td>
+            <td>Submitted</td>
+            <td>In progress</td>
+            <td><button class="cancel-button">Delete Application</button></td>
+          </tr>
+
+          <tr>
+            <td>218007280</td>
+            <td>Z Davhana</td>
+            <td>2023-05-28</td>
+            <td>Declined</td>
+            <td>Decline Email</td>
+            <td><button class="reject-button">Rejection Reason</button></td>
+          </tr>
+          <!-- Add more rows for each application here -->
+        </tbody>
+    </table>
+
+    <div class="end-butt">
+        <a href="page.html">
+            <input type="button" value="Return to Previous page" class="back butt" name="back">
+        </a>
+    </div>
+      
+
+<script src="all.js"  ></script>
+<script>
+    var cancelButtons = document.querySelectorAll('.cancel-button');
+    cancelButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        alert('You have successfully cancelled your application');
+        var row = this.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      });
+      
+    });
+
+    var alertButton = document.querySelector('.reject-button');
+        alertButton.addEventListener('click', function() {
+          alert('You did not meet the minimum requirements');
+        });
+</script>
+<script>
+var slides = document.getElementsByClassName("slide");
+var currentSlideIndex = 0;
+
+function showSlide(index) {
+  if (index < 0 || index >= slides.length) {
+    return;
+  }
+
+  // Hide all slides
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Show the selected slide
+  slides[index].style.display = "block";
+  currentSlideIndex = index;
+}
+
+function nextSlide() {
+  var nextIndex = currentSlideIndex + 1;
+  if (nextIndex >= slides.length) {
+    nextIndex = 0;
+  }
+  showSlide(nextIndex);
+}
+
+// Automatically advance to the next slide every 3 seconds
+setInterval(nextSlide, 5000);
+
+// Show the first slide initially
+showSlide(0);
+
+</script>
+</body>
+</html>
