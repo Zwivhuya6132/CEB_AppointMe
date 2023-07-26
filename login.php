@@ -2,14 +2,14 @@
     include_once 'includes/header.php';
 ?>
 
-<form action="" method="POST" enctype="multipart/form-data" name="form-login" class="log-form">
+<form action="includes/login.inc.php" method="POST" enctype="multipart/form-data" name="form-login" class="log-form">
     <div class="d-div">
         <h1>Login</h1>
     </div>
 
     <div class="fields">
         <label for="email">Student Number</label><br>
-        <input type="email" class="StudentNumber" id="StudentNumber" name="StudentNumber" placeholder="Student Number">
+        <input type="text" class="StudentNumber" id="StudentNumber" name="StudentNumber" placeholder="Student Number">
     </div>
 
     <div class="fields">

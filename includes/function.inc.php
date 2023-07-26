@@ -75,6 +75,30 @@ function userExist($conn, $IdNo){
     mysqli_stmt_close($stmt);
 }
 
+function userLogs($conn, $StudentNumber){
+    $sql = "SELECT * FROM students WHERE StudentNo =?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: registration.php?eror=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $StudentNumber);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }else{
+        $result =false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 function createUser ( $conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password){
     $sql = "INSERT INTO students  (Fname, Lname, IdNo, Tittle, Gender, Race, Nationality, HomeLang, EmailAdd, PhoneNo, StreetAdd, Town, City, PostalCode, Password ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
@@ -89,7 +113,72 @@ function createUser ( $conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Na
     mysqli_stmt_bind_param($stmt, "ssssssssssissss", $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $PassHashed);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    
+
     header("location: ../login.php");
     exit();
+}
+
+function emptyLoginInputs($StudentNumber, $Password) {
+    $result = "";
+
+    if( empty($StudentNumber) || empty($Password)){
+        
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
+
+function loginUser($conn, $StudentNumber, $Password){
+    $unhashedpass = $Password;
+
+    $uidExists = userLogs($conn, $StudentNumber);
+    $PassHashed = $uidExists["Password"];
+    $checkPass = password_verify($Password, $PassHashed);
+    // var_dump($uidExists);
+    // exit();
+    // $row = $uidExists["UserType"];
+
+    if($checkPass === false){
+        header("location: ../login.php?error=wronglogin");
+        exit();
+
+    }else {
+        session_start();
+        $_SESSION["StudentNo"] = $uidExists["StudentNo"];
+        $_SESSION["Fname"] = $uidExists["Fname"];
+        $_SESSION["Lname"] = $uidExists["Lname"];
+        $_SESSION["IdNo"] = $uidExists["IdNo"];
+        $_SESSION["Tittle"] = $uidExists["Tittle"];
+        $_SESSION["Gender"] = $uidExists["Gender"];
+        $_SESSION["Race"] = $uidExists["Race"];
+        $_SESSION["Nationality"] = $uidExists["Nationality"];
+        $_SESSION["HomeLang"] = $uidExists["HomeLang"];
+        $_SESSION["EmailAdd"] = $uidExists["EmailAdd"];
+        $_SESSION["PhoneNo"] = $uidExists["PhoneNo"];
+        $_SESSION["StreetAdd"] = $uidExists["StreetAdd"];
+        $_SESSION["Town"] = $uidExists["Town"];
+        $_SESSION["City"] = $uidExists["City"];
+        $_SESSION["PostalCode"] = $uidExists["PostalCode"];
+        $_SESSION["Password"] = $uidExists["Password"];
+        
+        echo "Kelebogile you are the best";
+        // header("location: ../index.php");
+        exit();
+    } 
+    // else {
+    //     session_start();
+    //     $_SESSION["id"] = $uidExists["id"];
+    //     $_SESSION["Fname"] = $uidExists["Fname"];
+    //     $_SESSION["Lname"] = $uidExists["Lname"];
+    //     $_SESSION["Dbirth"] = $uidExists["Dbirth"];
+    //     $_SESSION["Gender"] = $uidExists["Gender"];
+    //     $_SESSION["Address"] = $uidExists["Address"];
+    //     $_SESSION["Contact"] = $uidExists["Contact"];
+    //     $_SESSION["Email"] = $uidExists["Email"];
+    //     $_SESSION["Password"] = $uidExists["Password"];
+    //     header("location: ../index.php");
+    //     exit();
+    // }
 }
