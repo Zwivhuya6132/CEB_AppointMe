@@ -13,18 +13,26 @@
     <link rel="stylesheet" href="Link.css">
     <style>
 
-        .reg-error{
-            color:red;
-            background-color: #2e1a46;
-            width: 75%;
-            text-align: center;
-            margin: auto;
-            line-height: 2.2;
-            /* padding: 10px 5px; */
-            font-weight: 700;
+    .log-form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .reg-error{
+        color:red;
+        background-color: #2e1a46;
+        width: 75%;
+        text-align: center;
+        margin: auto;
+        line-height: 2.2;
+        /* padding: 10px 5px; */
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
 
-        }
-        .regform {
+    .regform {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -78,7 +86,7 @@ select {
 .submit-button {
     padding: 10px 20px;
     width: 40%;
-    background-color: #007bff;
+    background-color: #2e1a46;
     color: #fff;
     border: none;
     border-radius: 5px;

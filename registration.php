@@ -5,45 +5,46 @@
 <main>
 <form action="includes/register.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
 
-                <div class="reg-error">
-                    <?php
-                    if(isset($_GET["error"])){
-                        if ($_GET["error"]=="emptyinput"){
-                            echo "<p>All fields are reqiured</p>";
-                        }
+        <div class="reg-error">
+            <?php
+            if(isset($_GET["error"])){
+                if ($_GET["error"]=="emptyinput"){
+                    echo "<p>All fields are reqiured</p>";
+                }
 
-                        if ($_GET["error"]=="invalidphone"){
-                            echo "<p>Please enter a valid phone number</p>";
-                        }
+                if ($_GET["error"]=="invalidphone"){
+                    echo "<p>Please enter a valid phone number</p>";
+                }
 
-                        if ($_GET["error"]=="invalidemail"){
-                            echo "<p>Please enter a valid EmailAddress</p>";
-                        }
+                if ($_GET["error"]=="invalidemail"){
+                    echo "<p>Please enter a valid EmailAddress</p>";
+                }
 
-                        if ($_GET["error"]=="passdontmatch"){
-                            echo "<p>Passwords do not match</p>";
-                        }
+                if ($_GET["error"]=="passdontmatch"){
+                    echo "<p>Passwords do not match</p>";
+                }
 
-                        if ($_GET["error"]=="UserAlreadyExist"){
-                            echo "<p>ID Number already exist </p>";
-                        }
+                if ($_GET["error"]=="UserAlreadyExist"){
+                    echo "<p>ID Number already exist </p>";
+                }
 
-                    }
-                    
-                    ?>
-                </div>
+            }
+            
+            ?>
+        </div>
         <div class="sections">
             <h1 class="h1">Personal Details</h1>
             <div class="fields-group">
-                <div class="fields">
+                <div class="fields names-in">
                     <label for="first-name">First Name:</label>
                     <input type="text" class="inputs" id="first-name" name="first-name" placeholder="Enter your first name">
                 </div>
-                <div class="fields">
+                <div class="fields names-in">
                     <label for="last-name">Last Name:</label>
                     <input type="text" class="inputs" id="last-name" name="last-name" placeholder="Enter your last name">
                 </div>
             </div>
+            
             <div class="fields">
                 <label for="id-number">ID/Passport Number:</label>
                 <input type="text" class="inputs" id="id-number" name="id-number" placeholder="Enter your ID/Passport number">
