@@ -19,8 +19,37 @@ if (isset($_POST['submit'])){
     $Password = $_POST['password'];
     $CPassword = $_POST['confirm-password'];
 
+    // var_dump($_POST);
+    // exit;
+
     require_once 'conn.inc.php';
     require_once 'function.inc.php';
+
+    if(emptyInputs($Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password, $CPassword) !== false){
+        header("location: ../registration.php?error=emptyinput");
+        exit();
+    }
+
+    if(invalidPhone($PhoneNo) !== false){
+        header("location: ../registration.php?error=invalidphone");
+        exit();
+    }
+
+    if(invalidEmail($EmailAdd) !== false){
+        header("location: ../registration.php?error=invalidemail");
+        exit();
+    }
+
+    if(passworddMatch($Password, $CPassword) !== false){
+        header("location: ../registration.php?error=passdontmatch");
+        exit();
+    }
+
+    if(userExist($conn, $IdNo) !== false){
+        header("location: ../registration.php?error=UserAlreadyExist");
+        exit();
+    }
+
 
     createUser($conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password);
 

@@ -12,6 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Link.css">
     <style>
+
+        .reg-error{
+            color:red;
+            background-color: #2e1a46;
+            width: 75%;
+            text-align: center;
+            margin: auto;
+            line-height: 2.2;
+            /* padding: 10px 5px; */
+            font-weight: 700;
+
+        }
         .regform {
     max-width: 600px;
     margin: 0 auto;
@@ -65,6 +77,7 @@ select {
 .back-button,
 .submit-button {
     padding: 10px 20px;
+    width: 40%;
     background-color: #007bff;
     color: #fff;
     border: none;

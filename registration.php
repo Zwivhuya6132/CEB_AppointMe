@@ -4,6 +4,34 @@
 
 <main>
 <form action="includes/register.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
+
+                <div class="reg-error">
+                    <?php
+                    if(isset($_GET["error"])){
+                        if ($_GET["error"]=="emptyinput"){
+                            echo "<p>All fields are reqiured</p>";
+                        }
+
+                        if ($_GET["error"]=="invalidphone"){
+                            echo "<p>Please enter a valid phone number</p>";
+                        }
+
+                        if ($_GET["error"]=="invalidemail"){
+                            echo "<p>Please enter a valid EmailAddress</p>";
+                        }
+
+                        if ($_GET["error"]=="passdontmatch"){
+                            echo "<p>Passwords do not match</p>";
+                        }
+
+                        if ($_GET["error"]=="UserAlreadyExist"){
+                            echo "<p>ID Number already exist </p>";
+                        }
+
+                    }
+                    
+                    ?>
+                </div>
         <div class="sections">
             <h1 class="h1">Personal Details</h1>
             <div class="fields-group">
