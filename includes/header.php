@@ -11,6 +11,73 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Link.css">
+    <style>
+        .regform {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid orange;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fields-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fields {
+    flex-basis: calc(33.33% - 20px);
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.sections {
+    margin-bottom: 30px;
+}
+
+.h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.button-groups {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-button,
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover,
+.submit-button:hover {
+    background-color: #0056b3;
+}
+    </style>
 </head>
 <body>
     <header class="head">
