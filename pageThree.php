@@ -1,50 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="all.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Ulink</title>
-</head>
-<body>
-    <header class="head">
-
-        <div class="head-left">
-            <img src="images/uj.png" alt="uj logo" class="logo">
-            
-            <ul class="nav-links">
-                <li><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log-out</li>
-                <li><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;Help</li>
-                <li><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Notification</li>
-            </ul>
-        </div>
-
-        <div class="head-right">
-
-            <small>
-                <p>Welcome Mr Z Davhana</p>
-                <p> zwivhuyadavhana6132@gmail.com </p>
-            </small>
-
-            <small class="big-ulink">
-                 <h1>Ulink</h1>
-            </small>
-
-        </div>
-        
-    </header>
+    <?php
+        include_once 'includes/header.php';
+    ?>
 
     <div style="text-align: center;">
-        <h1 style="font-size: 25px;">REGISTRATION PROCESS</h1>
+        <h1 style="font-size: 25px;">REGISTRATION CONFIRMATION</h1>
+        <p style="color: red; width: 50%; margin:10px auto;">
+            YOU ARE ABOUT TO SUBMIT  A TUTORING APPLICATION PLEASE 
+            CONFIRM IF ALL THE INFORMATION BELOW IS CORRECT IF THERE 
+            IS A MISTAKE "CLICK RETURN TO PREVIOUS PAGE"
+        </p>
     </div>
 
     <div class="progress-bar">
-        <div class="progress">55%</div>
+        <div class="progress">85%</div>
     </div>
 
 
@@ -55,7 +23,7 @@
 
         <div class="form-group">
             <label for="employee-status" class="label">Returning or New Employee:</label>
-            <select id="employee-status" class="form-control">
+            <select id="employee-status" class="form-control" disabled>
                 <option value="returning">Returning</option>
                 <option value="new">New</option>
             </select>
@@ -63,12 +31,12 @@
         
         <div class="form-group">
             <label for="employee-number" class="label">Employee Number:</label>
-            <input type="text" id="employee-number" class="form-control">
+            <input type="text" id="employee-number" value="22990099" class="form-control" disabled>
         </div>
         
         <div class="form-group">
             <label for="previously-employed" class="label">Previously employed at UJ:</label>
-            <select id="previously-employed" class="form-control">
+            <select id="previously-employed" class="form-control" disabled>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
@@ -76,12 +44,12 @@
         
         <div class="form-group">
             <label for="faculty-division" class="label">If yes, please select faculty/division:</label>
-            <input type="text" id="faculty-division" class="form-control">
+            <input type="text" id="faculty-division" value="College of Business & Economics" class="form-control" disabled>
         </div>
         
         <div class="form-group">
             <label for="appointed-as" class="label">Appointed as:</label>
-            <input type="text" id="appointed-as" class="form-control">
+            <input type="text" id="appointed-as" value="Tutor" class="form-control" disabled>
         </div>
 
     <div class="d-div">
@@ -91,7 +59,7 @@
     <div class="clearfix">
         <div class="form-group">
             <label for="confirm-care" class="label">Confirm Care of Intermediary:</label>
-            <select id="confirm-care" class="form-control">
+            <select id="confirm-care" class="form-control" disabled>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
@@ -99,9 +67,10 @@
         
         <div class="form-group">
             <label for="faculty" class="label">Faculty:</label>
-            <input type="text" id="faculty" class="form-control">
+            <input type="text" id="faculty" class="form-control" disabled value="CBE">
         </div>
     </div>
+
 
     <div class="d-div">
         <h1>Temporary Appointment Details</h1>
@@ -112,15 +81,15 @@
             <div class="new-clearfix">
                 <div class="new-form-group">
                     <label for="employment-group" class="new-label">Employment Group:</label>
-                    <select id="employment-group" class="new-form-control">
-                        <option value="group1">Group 1</option>
+                    <select id="employment-group" class="new-form-control" disabled>
+                        <option value="group1">Group 2</option>
                         <option value="group2">Group 2</option>
                     </select>
                 </div>
                 
                 <div class="new-form-group">
                     <label for="appointment-category" class="new-label">Appointment Category:</label>
-                    <select id="appointment-category" class="new-form-control">
+                    <select id="appointment-category" class="new-form-control" disabled>
                         <option value="category1">Category 1</option>
                         <option value="category2">Category 2</option>
                     </select>
@@ -132,11 +101,11 @@
                     <label class="new-label">Duration of Appointment:</label>
                     <div>
                         <label for="start-date">Start Date:</label>
-                        <input type="date" id="start-date" class="new-form-control">
+                        <input type="date" id="start-date" class="new-form-control" disabled value="2023-01-27">
                     </div>
                     <div>
                         <label for="end-date">End Date:</label>
-                        <input type="date" id="end-date" class="new-form-control">
+                        <input type="date" id="end-date" class="new-form-control" disabled value="2023-05-27">
                     </div>
                 </div>
             </div>
@@ -144,7 +113,7 @@
             <div class="new-clearfix">
                 <div class="new-form-group">
                     <label for="reason-temp-employment" class="new-label">Reason for Temporary Employment:</label>
-                    <select id="reason-temp-employment" class="new-form-control">
+                    <select id="reason-temp-employment" class="new-form-control" disabled>
                         <option value="reason1">Reason 1</option>
                         <option value="reason2">Reason 2</option>
                     </select>
@@ -152,14 +121,21 @@
             </div>
 
     <div class="end-butt">
-        <a href="index.html">
-            <input type="button" value="Back to Start" class="back butt" name="back">
+        <a href="index.php">
+            <input type="button" value="Return to Previous page" class="back butt" name="back">
         </a>
-        <a href="pageThree.html">
-            <input type="button" value="Continue Application" class="submit butt" name="submit"> 
+        <a href="banking.php">
+            <input type="button" value="Submit Application" class="submit butt" name="submit"> 
         </a>
     </div>
     </form>
     <script src="all.js"  ></script>
-</body>
-</html>
+    <script>
+        var alertButton = document.querySelector('.submit');
+        alertButton.addEventListener('click', function() {
+          alert('For your application to be finalised you need to upload your Proof of banking');
+        });
+    </script>
+<?php
+  include_once 'includes/footer.php';
+?>

@@ -143,6 +143,41 @@ a{
     /* display: block; */
     min-width: 120px ;
 }
+    table {
+      width: 50%;
+      margin: auto;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .cancel-button,
+    .reject-button {
+      padding: 6px 12px;
+      font-size: 14px;
+      background-color: #e65300;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .cancel-button:hover,
+    .reject-button:hover{
+        border: 2px solid #e65300;
+        background-color: #ffffff;
+        color: #e65300;
+    }
     </style>
 </head>
 <body>
@@ -173,9 +208,11 @@ a{
         <?php
             if(isset($_SESSION["StudentNo"])){
 
-                echo'<p>'.$_SESSION["Fname"].' '. $_SESSION["Lname"].'</p>';
+                echo'<p>Welcome'.' '.$_SESSION["Fname"][0].' '. $_SESSION["Lname"].'</p>';
+                echo'<p>'.$_SESSION["EmailAdd"].'</p>';
             }else{
-                echo '<p>My Account</p>';
+                echo '<p>&nbsp;</p>';
+                echo '<p>&nbsp;</p>';
             }
         ?>
             <!-- <p>Welcome Mr Z Davhana</p>

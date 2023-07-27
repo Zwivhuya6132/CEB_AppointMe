@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="all.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slide.css">
-    <title>Tutorial</title>
-</head>
-<body>
-    <header class="head">
-        <div class="head-left">
-            <img src="images/uj.png" alt="uj logo" class="logo">
-            
-            <ul class="nav-links">
-                <li><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log-out</li>
-                <li><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;Help</li>
-                <li><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Notification</li>
-            </ul>
-        </div>
-
-        <div class="head-right">
-
-            <small>
-                <p>Welcome Mr Z Davhana</p>
-                <p> zwivhuyadavhana6132@gmail.com </p>
-            </small>
-
-            <small class="big-ulink">
-                 <h1>Ulink</h1>
-            </small>
-
-        </div>
-    </header>
+  <?php
+    include_once 'includes/header.php';
+  ?>
 
     <div class="slideshow-container">
         <div class="slide">
@@ -52,19 +19,19 @@
 
     <h1 style="text-align: center; font-size: 35px;">Appoint Me</h1>
     <ul class="class" style="line-height: 2.5; border: 2px solid grey; width: 40%; margin: auto; list-style-type: none;">
-        <a href="index.html">
+        <a href="StartApp.php">
           <li style="border-bottom: 2px solid grey;">Start Application</li>
         </a>
 
-        <a href="banking.html">
+        <a href="banking.php">
           <li style="border-bottom: 2px solid grey;">Upload Proof of Banking</li>
         </a>
 
-        <a href="status.html">
+        <a href="status.php">
           <li style="border-bottom: 2px solid grey;">Check Status</li>
         </a>
 
-        <a href="status.html">
+        <a href="status.php">
           <li style="border-bottom: px solid grey;">Cancel Application</li>
         </a>
     </ul>
@@ -107,5 +74,6 @@ setInterval(nextSlide, 5000);
 showSlide(0);
 
 </script>
-</body>
-</html>
+<?php
+  include_once 'includes/footer.php';
+?>

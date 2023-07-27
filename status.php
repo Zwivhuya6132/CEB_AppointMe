@@ -1,76 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="all.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slide.css">
-    <title>Tutorial</title>
-    <style>
-    table {
-      width: 50%;
-      margin: auto;
-      border-collapse: collapse;
-      margin-bottom: 25px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-      
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    .cancel-button,
-    .reject-button {
-      padding: 6px 12px;
-      font-size: 14px;
-      background-color: #e65300;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .cancel-button:hover,
-    .reject-button:hover{
-        border: 2px solid #e65300;
-        background-color: #ffffff;
-        color: #e65300;
-    }
-    </style>
-</head>
-<body>
-    <header class="head">
-        <div class="head-left">
-            <img src="images/uj.png" alt="uj logo" class="logo">
-            
-            <ul class="nav-links">
-                <li><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log-out</li>
-                <li><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;Help</li>
-                <li><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Notification</li>
-            </ul>
-        </div>
-
-        <div class="head-right">
-
-            <small>
-                <p>Welcome Mr Z Davhana</p>
-                <p> zwivhuyadavhana6132@gmail.com </p>
-            </small>
-
-            <small class="big-ulink">
-                 <h1>Ulink</h1>
-            </small>
-
-        </div>
-    </header>
+<?php
+  include_once 'includes/header.php';
+?>
 
     <div class="slideshow-container">
         <div class="slide">
@@ -123,7 +53,7 @@
     </table>
 
     <div class="end-butt">
-        <a href="page.html">
+        <a href="page.php">
             <input type="button" value="Return to Previous page" class="back butt" name="back">
         </a>
     </div>
@@ -180,5 +110,6 @@ setInterval(nextSlide, 5000);
 showSlide(0);
 
 </script>
-</body>
-</html>
+<?php
+  include_once 'includes/footer.php';
+?>

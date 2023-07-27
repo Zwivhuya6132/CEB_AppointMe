@@ -68,6 +68,12 @@
   scale: 1;
 }
 
+a{
+    color: #e65300;
+    text-decoration: none;
+    z-index: 1;
+}
+
 .cen{
     border: 2px solid #e65300;
     border-radius: 15px;
@@ -92,8 +98,9 @@
         <div class="result">
             <strong>Student Number:</strong> <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "N/A"; ?>
         </div>
-        <button class="buts" onclick="window.location.href='index.php'">Go to Login</button>
+        <button class="buts" onclick="window.location.href='index.php'"><a href="includes/logout.inc.php">Go to Login</a></button>
     </div>
 
-</body>
-</html>
+    <?php
+  include_once 'includes/footer.php';
+?>
