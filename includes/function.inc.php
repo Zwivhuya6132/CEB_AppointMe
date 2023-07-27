@@ -99,13 +99,12 @@ function userLogs($conn, $StudentNumber){
     mysqli_stmt_close($stmt);
 }
 
-function createUser ( $conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password){
-    $sql = "INSERT INTO students  (Fname, Lname, IdNo, Tittle, Gender, Race, Nationality, HomeLang, EmailAdd, PhoneNo, StreetAdd, Town, City, PostalCode, Password ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+function createUser($conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password) {
+    $sql = "INSERT INTO students (Fname, Lname, IdNo, Tittle, Gender, Race, Nationality, HomeLang, EmailAdd, PhoneNo, StreetAdd, Town, City, PostalCode, Password) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
 
-    if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: registration.php?eror=stmtfailed");
-        // echo "failed";
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: registration.php?error=stmtfailed");
         exit();
     }
 
@@ -114,9 +113,20 @@ function createUser ( $conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Na
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../login.php");
+    // Start the session
+    session_start();
+
+    // Get the newly inserted user ID
+    $userId = mysqli_insert_id($conn);
+
+    // Store the user ID in the session variable
+    $_SESSION['user_id'] = $userId;
+
+    // Redirect to the login page or any other page as needed
+    header("location: ../registered.php");
     exit();
 }
+
 
 function emptyLoginInputs($StudentNumber, $Password) {
     $result = "";
@@ -163,8 +173,7 @@ function loginUser($conn, $StudentNumber, $Password){
         $_SESSION["PostalCode"] = $uidExists["PostalCode"];
         $_SESSION["Password"] = $uidExists["Password"];
         
-        echo "Kelebogile you are the best";
-        // header("location: ../index.php");
+        header("location: ../startApp.php");
         exit();
     } 
     // else {

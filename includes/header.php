@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Link.css">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="sty.css">
+    <link rel="stylesheet" href="style.css">
     <style>
 
     .log-form {
@@ -40,6 +47,7 @@
     border: 2px solid orange;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 180px;
 }
 
 .fields-group {
@@ -98,32 +106,83 @@ select {
 .submit-button:hover {
     background-color: #0056b3;
 }
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #0066cc;
+}
+
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-links{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+}
+
+.nav-links li{
+    /* display: block; */
+    min-width: 120px ;
+}
     </style>
 </head>
 <body>
-    <header class="head">
-
-        <div class="head-left">
-            <img src="images/uj.png" alt="uj logo" class="logo">
-            
+<header class="head">
+    <div class="head-left">
+        <img src="images/uj.png" alt="uj logo" class="logo">
+        <?php
+        if (isset($_SESSION["StudentNo"])) {
+            echo '
+                <ul class="nav-links">
+                    <li><a href="includes/logout.inc.php"><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log-out</a></li>
+                    <li><a href="news-events.php"><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;Help</a></li>
+                    <li><a href="help.php"><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Notifications</a></li>
+                </ul>';
+        } else {
+            echo '
             <ul class="nav-links">
-                <li><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log-out</li>
-                <li><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;Help</li>
-                <li><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Notification</li>
-            </ul>
-        </div>
+                <li><a href="alumni.php"><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Alumni</a></li>
+                <li><a href="news-events.php"><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;News And Events</a></li>
+                <li><a href="help.php"><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Help</a></li>
+                <li><a href="contact.php"><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Contact</a></li>
+            </ul>';
+        }
+        ?>
+    </div>
+    <div class="head-right">
+        <small>
+        <?php
+            if(isset($_SESSION["StudentNo"])){
 
-        <div class="head-right">
-
-            <small>
-                <p>Welcome Mr Z Davhana</p>
-                <p> zwivhuyadavhana6132@gmail.com </p>
-            </small>
-
-            <small class="big-ulink">
-                 <h1>Ulink</h1>
-            </small>
-
-        </div>
-        
-    </header>
+                echo'<p>'.$_SESSION["Fname"].' '. $_SESSION["Lname"].'</p>';
+            }else{
+                echo '<p>My Account</p>';
+            }
+        ?>
+            <!-- <p>Welcome Mr Z Davhana</p>
+            <p>zwivhuyadavhana6132@gmail.com</p> -->
+        </small>
+        <small class="big-ulink">
+            <h1>Ulink</h1>
+        </small>
+    </div>
+</header>

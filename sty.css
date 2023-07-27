@@ -28,7 +28,7 @@
     width: 40%;
 }
 
-.nav-links{
+/* .nav-links{
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -46,7 +46,7 @@
 
 .nav-links li:hover{
     background-color:#e65300;
-}
+} */
 
 .head-right{
     line-height: 2;

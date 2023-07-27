@@ -32,7 +32,8 @@
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    width: 45%;
+    background-color: #e65300;
+    /* width: 45%; */
 }
 
 .nav-links li{
