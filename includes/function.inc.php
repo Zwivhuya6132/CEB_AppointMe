@@ -190,4 +190,47 @@ function loginUser($conn, $StudentNumber, $Password){
     //     header("location: ../index.php");
     //     exit();
     // }
+
+}
+
+
+function tutorReg($conn,$StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment) {
+    $sql = "INSERT INTO tutor_reg (StudentNo, EmployeeStatus, EmployeeNumber, UjEmployment, IfYes, Appointed, Intermediary, Fuculty, EmploymentGroup, Appointment, StartDate, EndDate, Employment) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: registration.php?error=stmtfailed");
+        exit();
+    }
+
+    // Convert start date to the correct format 'YYYY-MM-DD'
+    $StartDateFormatted = date('Y-m-d', strtotime($StartDate));
+
+    // Convert end date to the correct format 'YYYY-MM-DD'
+    $EndDateFormatted = date('Y-m-d', strtotime($EndDate));
+
+    // Bind the formatted dates to the statement
+    mysqli_stmt_bind_param($stmt, "issssssssssss",$StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDateFormatted, $EndDateFormatted, $ReasonTempEmployment);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+
+    // Redirect to the login page or any other page as needed
+    header("location: ../pageThree.php");
+    exit();
+}
+
+function emptyBackground($Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password, $CPassword) {
+    $result = "";
+
+    if(empty($Fname) || empty($Lname) || empty($IdNo) || empty($Tittle) || empty($Gender) ||
+     empty($Race) || empty($Nationality) || empty($HomeLang) || empty($EmailAdd) ||
+      empty($PhoneNo) || empty($StreetAdd) || empty($Town) || empty($City) || empty($PostalCode) || empty($Password) || empty($CPassword) ){
+
+        $result = true;
+    }else{
+        $result = false;
+    }
+
+    return $result;
 }

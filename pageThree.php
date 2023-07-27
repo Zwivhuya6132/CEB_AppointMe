@@ -121,7 +121,7 @@
             </div>
 
     <div class="end-butt">
-        <a href="index.php">
+        <a href="startApp.php">
             <input type="button" value="Return to Previous page" class="back butt" name="back">
         </a>
         <a href="banking.php">
