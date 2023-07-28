@@ -11,48 +11,51 @@
     </div>
 
 
-    <form action="" method="POST" enctype="multipart/form-data"  name="form-reg" class="form">
+    <form action="" method="POST" enctype="multipart/form-data"  name="form-reg" class="regform">
         <div class="d-div">
             <h1>Personal Details</h1>
         </div>
 
-        <div class="names">
-            <span>
+        <div class="fields-group">
+            <div class="fields names-in">
                 <label for="first-name">First Name</label><br>
-                <input type="text" class="fName name" id="first-name" name="first-name" value="<?php if(isset($_SESSION['StudentNo'])){
+                <input type="text" class="fName inputs" id="first-name" name="first-name" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["Fname"];
                 }?>" disabled>
-            </span>
+            </div>
 
-            <span>
-                <label for="first-name">Last Name</label><br>
-                <input type="text" class="lName name" id="second-name" name="second-name" value="<?php if(isset($_SESSION['StudentNo'])){
+            <div fields class="fields names-in">
+                <label for="second-name">Last Name</label><br>
+                <input type="text" class="lName inputs" id="second-name" name="second-name" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["Lname"];
                 }?>" disabled>
-            </span>
+            </div>
         </div>
+
         <div>
-            <div class="id-con">
+            <div class="fields">
                 <label for="id">ID/Passport Number</label><br>
-                <input type="text" class="id" id="id" name="id-num" value="<?php if(isset($_SESSION['StudentNo'])){
+                <input type="text" class="id inputs" id="id" name="id-num" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["IdNo"];
                 }?>" disabled>
             </div>
         </div>
+
     </div>
+
     <div>
-        <div class="id-con">
+        <div class="fields">
             <label for="student">Student Number</label><br>
-            <input type="text" class="student" id="student" name="student" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="text" class="student inputs" id="student" name="student" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["StudentNo"];
                 }?>" disabled>
         </div>
     </div>
 
-    <div class="id-con sel">
-        <div class="container">
+    <div class="fields-group">
+        <div class="fields">
             <label for="title" class="label">Title:</label>
-            <select id="title" class="selection" disabled>
+            <select id="title" class="inputs" disabled>
                 <option value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["IdNo"];
                 }?>"><?php if(isset($_SESSION['StudentNo'])){
@@ -64,9 +67,9 @@
                 <option value="dr">Dr.</option>
             </select>
         </div>
-        <div class="container">
+        <div class="fields">
             <label for="gender" class="label">Gender:</label>
-            <select id="gender" class="selection" disabled>
+            <select id="gender" class="inputs" disabled>
             <option value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["IdNo"];
                 }?>"><?php if(isset($_SESSION['StudentNo'])){
@@ -77,9 +80,9 @@
                 <option value="other">Other</option>
             </select>
         </div>
-        <div class="container" >
+        <div class="fields" >
             <label for="race" class="label">Race:</label>
-            <select id="race" class="selection" disabled>
+            <select id="race" class="inputs" disabled>
             <option value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["IdNo"];
                 }?>"><?php if(isset($_SESSION['StudentNo'])){
@@ -95,80 +98,75 @@
 
     </div>
 
-    <div class="names">
-        <span>
-            <label for="nationality">Nationality</label><br>
-            <input type="text" class="fName name" id="nationality" name="nationality" value="<?php if(isset($_SESSION['StudentNo'])){
-                    echo $_SESSION["Nationality"];
-                }?>" disabled>
-        </span>
+    <div class="fields">
+        <label for="nationality">Nationality</label><br>
+        <input type="text" class="fName inputs" id="nationality" name="nationality" value="<?php if(isset($_SESSION['StudentNo'])){
+                echo $_SESSION["Nationality"];
+            }?>" disabled>
+    </div>
 
-        <span>
-            <label for="language">Home Language</label><br>
-            <input type="text" class="lName name" id="language" name="language" value="<?php if(isset($_SESSION['StudentNo'])){
-                    echo $_SESSION["HomeLang"];
-                }?>" disabled>
-        </span>
+    <div class="fields">
+        <label for="language">Home Language</label><br>
+        <input type="text" class="lName inputs" id="language" name="language" value="<?php if(isset($_SESSION['StudentNo'])){
+                echo $_SESSION["HomeLang"];
+            }?>" disabled>
     </div>
 
     <div class="d-div">
         <h1>Contact Details</h1>
     </div>
 
-    <div class="names">
-        <span>
+    <div class="fields-group">
+        <div class="fields names-in">
             <label for="email">Email Address</label><br>
-            <input type="email" class="fName name" id="email" name="email" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="email" class="fName inputs" id="email" name="email" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["EmailAdd"];
                 }?>" disabled>
-        </span>
+        </div>
 
-        <span>
+        <div class="fields names-in">
             <label for="number">Cell Phone Number</label><br>
-            <input type="text" class="lName name" id="number" name="number" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="text" class="lName inputs" id="number" name="number" value="0<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["PhoneNo"];
                 }?>" disabled>
-        </span>
+        </div>
     </div>
 
     <div>
-        <div class="id-con">
+        <div class="fields">
             <label for="street">Street Address</label><br>
-            <input type="text" class="id" id="street" name="id-num" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="text" class="inputs" id="street" name="id-num" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["StreetAdd"];
                 }?>" disabled>
         </div>
     </div>
 
-    <div class="id-con sel">
-        <div class="container">
+    <div class="id-con fields-group">
+        <div class="fields">
             <label for="town" class="label">Town:</label>
-            <input type="text" class="addr" id="town" name="town" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="text" class="inputs" id="town" name="town" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["Town"];
                 }?>" disabled>
         </div>
-        <div class="container">
+        <div class="fields">
             <label for="city" class="label">City:</label>
-            <input type="text" class="addr" id="city" name="city" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="text" class="inputs" id="city" name="city" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["City"];
                 }?>" disabled>
         </div>
-        <div class="container" >
+        <div class="fields" >
             <label for="race" class="label">Postal Code:</label>
-            <input type="text" class="addr" id="street" name="id-num" value="<?php if(isset($_SESSION['StudentNo'])){
+            <input type="text" class="inputs" id="street" name="id-num" value="<?php if(isset($_SESSION['StudentNo'])){
                     echo $_SESSION["PostalCode"];
                 }?>" disabled>
         </div>
 
     </div>
 
-    <div class="end-butt">
-        <a href="page.php">
-          <input type="button" value="Back to Start" class="back butt" name="back">
-        </a>
-        <a href="pageTwo.php">
-            <input type="button" value="Continue Application" class="submit butt" name="submit"> 
-        </a>
+    <div class="button-groups">
+            <button class="submits-button login-inputs" name="back"><a href="page.php">&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;</a></button>
+
+            <button type="submit" class="submits-button login-inputs" name="submit">Continue</button>
     </div>
     </form>
 

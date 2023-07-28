@@ -33,7 +33,11 @@
             ?>
         </div>
         <div class="sections">
-            <h1 class="h1">Personal Details</h1>
+
+            <div class="d-div">
+                <h1>PERSONAL DETAILS</h1>
+            </div>
+            
             <div class="fields-group">
                 <div class="fields names-in">
                     <label for="first-name">First Name:</label>
@@ -79,6 +83,7 @@
                     </select>
                 </div>
             </div>
+
             <div class="fields">
                 <label for="nationality">Nationality:</label>
                 <input type="text" class="inputs" id="nationality" name="nationality" placeholder="Enter your nationality">
@@ -90,19 +95,25 @@
         </div>
 
         <div class="section">
-            <h1 class="h1">Contact Details</h1>
+            <div class="d-div">
+                <h1 class="h1">CONTACT DETAILS</h1>
+            </div>
+
             <div class="fields">
                 <label for="email">Email Address:</label>
                 <input type="email" class="inputs" id="email" name="email" placeholder="Enter your email address">
             </div>
+
             <div class="fields">
                 <label for="phone">Cell Phone Number:</label>
                 <input type="tel" class="inputs" id="phone" name="phone" placeholder="Enter your phone number">
             </div>
+
             <div class="fields">
                 <label for="street">Street Address:</label>
                 <input type="text" class="inputs" id="street" name="street" placeholder="Enter your street address">
             </div>
+
             <div class="fields-group">
                 <div class="fields">
                     <label for="town">Town:</label>
@@ -119,18 +130,21 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="fields">
             <label for="password">Password:</label>
-            <input type="password" class="input" id="password" name="password" placeholder="Enter your password">
+            <input type="password" class="inputs" id="password" name="password" placeholder="Enter your password">
         </div><br>
-        <div class="field">
+        <div class="fields">
             <label for="confirm-password">Confirm Password:</label>
-            <input type="password" class="input" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+            <input type="password" class="inputs" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
         </div><br>
 
         <div class="button-groups">
+            <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;cancel&nbsp;&nbsp;</button>
+            <button type="submit" class="submits-button login-inputs" name="submit">Register</button>
+<!--             
             <input type="button" value="Back to Start" class="back-button">
-            <input type="submit" value="Continue Application" name="submit" class="submit-button">
+            <input type="submit" value="Continue Application" name="submit" class="submit-button"> -->
         </div>
     </form>
 </main>

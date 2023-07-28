@@ -14,32 +14,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Link.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- <link rel="stylesheet" href="Link.css">
     <link rel="stylesheet" href="slide.css">
     <link rel="stylesheet" href="sty.css">
-    <link rel="stylesheet" href="style.css">
-    <style>
+    <link rel="stylesheet" href="style.css"> -->
+    <!-- <style>
 
-    .log-form {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    .reg-error{
-        color:red;
-        background-color: #2e1a46;
-        width: 75%;
-        text-align: center;
-        margin: auto;
-        line-height: 2.2;
-        /* padding: 10px 5px; */
-        font-weight: 700;
-        margin-bottom: 25px;
-    }
-
-    .regform {
+.regform {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -53,19 +35,6 @@
 .fields-group {
     display: flex;
     justify-content: space-between;
-}
-
-.fields {
-    flex-basis: calc(33.33% - 20px);
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
 }
 
 select {
@@ -85,11 +54,6 @@ select {
     margin-bottom: 10px;
 }
 
-.button-groups {
-    display: flex;
-    justify-content: space-between;
-}
-
 .back-button,
 .submit-button {
     padding: 10px 20px;
@@ -107,42 +71,6 @@ select {
     background-color: #0056b3;
 }
 
-footer {
-  background-color: #f0f0f0;
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-top: 20px;
-}
-
-footer p {
-  margin: 8px 0;
-}
-
-footer a {
-  color: #0066cc;
-}
-
-
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-.nav-links{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-}
-
-.nav-links li{
-    /* display: block; */
-    min-width: 120px ;
-}
     table {
       width: 50%;
       margin: auto;
@@ -178,7 +106,7 @@ a{
         background-color: #ffffff;
         color: #e65300;
     }
-    </style>
+    </style> -->
 </head>
 <body>
 <header class="head">
@@ -195,10 +123,10 @@ a{
         } else {
             echo '
             <ul class="nav-links">
-                <li><a href="alumni.php"><i class="fa-solid fa-power-off"></i>&nbsp;&nbsp;&nbsp;Alumni</a></li>
-                <li><a href="news-events.php"><i class="fa-solid fa-question"></i>&nbsp;&nbsp;&nbsp;News And Events</a></li>
-                <li><a href="help.php"><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Help</a></li>
-                <li><a href="contact.php"><i class="fa-regular fa-bell"></i>&nbsp;&nbsp;&nbsp;Contact</a></li>
+                <li><a href="https://www.uj.ac.za/contact/alumni/" target="_blank"><i class="fa-solid fa-user-graduate"></i>&nbsp;&nbsp;&nbsp;Alumni</a></li>
+                <li><a href="https://www.uj.ac.za/news/" target="_blank"><i class="fa-solid fa-newspaper"></i>&nbsp;&nbsp;&nbsp;News And Events</a></li>
+                <li><a href="https://ulink.uj.ac.za/Help" target="_blank"><i class="fa-solid fa-circle-question"></i>&nbsp;&nbsp;&nbsp;Help</a></li>
+                <li><a href="https://ulink.uj.ac.za/Contact" target="_blank"><i class="fa-regular fa-address-card"></i>&nbsp;&nbsp;&nbsp;Contact</a></li>
             </ul>';
         }
         ?>
@@ -219,7 +147,7 @@ a{
             <p>zwivhuyadavhana6132@gmail.com</p> -->
         </small>
         <small class="big-ulink">
-            <h1>Ulink</h1>
+            <h1>uLink</h1>
         </small>
     </div>
 </header>
