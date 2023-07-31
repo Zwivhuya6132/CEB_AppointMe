@@ -133,6 +133,13 @@
         <div class="fields">
             <label for="password">Password:</label>
             <input type="password" class="inputs" id="password" name="password" placeholder="Enter your password">
+            <ul class="passwordStrength">
+                <li id="lower">At least one lower character</li>
+                <li id="upper">At least one upper character</li>
+                <li id="number">At least one number</li>
+                <li id="special">At least one special character </li>
+                <li id="length">At least one 8 characters</li>
+            </ul>
         </div><br>
         <div class="fields">
             <label for="confirm-password">Confirm Password:</label>
