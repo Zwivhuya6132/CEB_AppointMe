@@ -1,5 +1,5 @@
 <?php
-    include_once 'includes/header.php';
+include_once 'includes/header.php';
 ?>
 
 <div class="text-center">
@@ -10,7 +10,7 @@
     <div class="progress">55%</div>
 </div>
 
-<form action="includes/tutor.inc.php" method="POST" enctype="multipart/form-data"  name="form-reg" class="regform">
+<form action="includes/tutor.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
     <div class="d-div">
         <h1>Employment Background</h1>
     </div>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="fields">
-        <label for="employee-number" class="label" >Employee Number:</label>
+        <label for="employee-number" class="label">Employee Number:</label>
         <input type="text" id="employee-number" class="inputs" name="employee-number">
     </div>
 
@@ -82,7 +82,7 @@
             </div>
 
             <div class="new-form-group float-right">
-                <label for="appointment-category" class="new-label" >Appointment Category:</label>
+                <label for="appointment-category" class="new-label">Appointment Category:</label>
                 <select id="appointment-category" class="inputs" name="appointment-category">
                     <option value="category1">Category 1</option>
                     <option value="category2">Category 2</option>
@@ -91,36 +91,41 @@
         </div>
 
         <div class="fields-group">
-                <!-- <label class="new-label">Duration of Appointment:</label> -->
-                    <div class="fields names-in">
-                        <label for="start-date">Start Date:</label>
-                        <input type="date" id="start-date" class="inputs" name="start-date">
-                    </div>
-                    <div class="fields names-in" >
-                        <label for="end-date">End Date:</label>
-                        <input type="date" id="end-date" class="inputs" name="end-date">
-                    </div>
-        </div
+            <div class="fields names-in">
+                <label class="new-label">Duration of Appointment:</label>
+                <div>
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" class="inputs" name="start-date">
+                </div>
+                <div>
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date" class="inputs" name="end-date">
+                </div>
+            </div>
+        </div>
 
-        <div class="fields">
-
-                <label for="reason-temp-employment" >Reason for Temporary Employment:</label>
-                <select id="reason-temp-employment" class="inputs" name="reason-temp-employment">
-                    <option value="reason1">Reason 1</option>
-                    <option value="reason2">Reason 2</option>
-                </select>
+        <div id="fields-group">
+            <div class="fields">
+                <div class="new-form-group float-left">
+                    <label for="reason-temp-employment" class="new-label">Reason for Temporary Employment:</label>
+                    <select id="reason-temp-employment" class="inputs" name="reason-temp-employment">
+                        <option value="Reason1">Reason 1</option>
+                        <option value="Reason2">Reason 2</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="button-groups">
-            <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button type="submit" class="submits-button login-inputs" name="submit">continue</button>
-            <!--             
-            <input type="button" value="Back to Start" class="back-button">
-            <input type="submit" value="Continue Application" name="submit" class="submit-button"> -->
+        <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button type="submit" class="submits-button login-inputs" name="submit"><a href="pageThree.php">continue</a></button>
+        <!--             
+        <input type="button" value="Back to Start" class="back-button">
+        <input type="submit" value="Continue Application" name="submit" class="submit-button"> -->
     </div>
 </form>
 
 <?php
-    include_once 'includes/footer.php';
+include_once 'includes/footer.php';
 ?>

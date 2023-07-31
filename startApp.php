@@ -166,7 +166,7 @@
     <div class="button-groups">
             <button class="submits-button login-inputs" name="back"><a href="page.php">&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;</a></button>
 
-            <button type="submit" class="submits-button login-inputs" name="submit">Continue</button>
+            <button type="submit" class="submits-button login-inputs" name="submit"><a href="pageTwo.php">Continue</a></button>
     </div>
     </form>
 
