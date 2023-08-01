@@ -166,7 +166,7 @@ function loginUser($conn, $StudentNumber, $Password){
     // $row = $uidExists["UserType"];
 
     if($checkPass === false){
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../index.php?error=wronglogin");
         exit();
 
     }else {

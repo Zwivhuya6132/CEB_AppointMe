@@ -24,6 +24,10 @@
                     echo "<p>Passwords do not match</p>";
                 }
 
+                if ($_GET["error"]=="invalidpassword"){
+                    echo "<p>ID Weak Password </p>";
+                }
+
                 if ($_GET["error"]=="UserAlreadyExist"){
                     echo "<p>ID Number already exist </p>";
                 }

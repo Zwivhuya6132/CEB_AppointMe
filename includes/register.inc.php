@@ -45,6 +45,12 @@ if (isset($_POST['submit'])){
         exit();
     }
 
+    // Add the new password validation check
+    if(!isPasswordValid($Password)) {
+        header("location: ../registration.php?error=invalidpassword");
+        exit();
+    }
+
     if(userExist($conn, $IdNo) !== false){
         header("location: ../registration.php?error=UserAlreadyExist");
         exit();
