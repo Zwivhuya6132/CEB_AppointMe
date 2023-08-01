@@ -39,6 +39,7 @@ function invalidEmail($EmailAdd){
     return $result;
 }
 
+
 function passworddMatch($Password, $CPassword){
     $result = "";
 
@@ -49,6 +50,20 @@ function passworddMatch($Password, $CPassword){
     }
 
     return $result;
+}
+
+function isPasswordValid($password) {
+    // Regular expression pattern to check for at least one lowercase character
+    $lower = '/(?=.*[a-z])/';
+
+    // Regular expression pattern to check for at least one uppercase character
+    $upper = '/(?=.*[A-Z])/';
+
+    // Regular expression pattern to check for a minimum length of 10 characters
+    $length = '/(?=.{10,})/';
+
+    // Check if the password matches all the required patterns
+    return (preg_match($lower, $password) && preg_match($upper, $password) && preg_match($length, $password));
 }
 
 function userExist($conn, $IdNo){

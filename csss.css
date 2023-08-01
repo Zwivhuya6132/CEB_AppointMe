@@ -278,6 +278,33 @@ ul{
     }
 }
 
+.toggle{
+    position:relative;
+  }
+  
+  #toggleBtn{
+    position: absolute;
+    right: 15px;
+    top:24px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #toggleBtn::before{
+    content: '\f06e';
+    font-family: fontAwesome;
+  }
+  
+  #toggleBtn.hide::before{
+    content: '\f070';
+    font-family: fontAwesome;
+  }
+
+  
 .passwordStrength{
     padding: 10px 0;
     margin-top: 5px;
@@ -285,7 +312,7 @@ ul{
     flex-direction: column;
     gap: 8px;
     border-radius: 8px;
-    background-color: rgba(165, 157, 157, 0.096);
+    background-color: #2e1a4610;
   }
   
   .passwordStrength li{
@@ -301,7 +328,7 @@ ul{
   .passwordStrength li.valid::before{
     content: '\f00c';
     font-family: fontAwesome;
-    color: #0f0;
+    color: #e65300;
   }
   
   .passwordStrength li::before{
@@ -310,8 +337,4 @@ ul{
     height: 10px;
     font-family: fontAwesome;
     display: inline-flex;
-  }
-
-  body{
-    background-color: #f0f0f0;
   }

@@ -130,20 +130,23 @@
             </div>
         </div>
 
-        <div class="fields">
+        <div class="fields toggle">
             <label for="password">Password:</label>
-            <input type="password" class="inputs" id="password" name="password" placeholder="Enter your password">
+            <input type="password" class="inputs" id="password" name="password" placeholder="Enter your password"  onkeyup="checkPassword(this.value)">
+            <span id="toggleBtn"></span>
             <ul class="passwordStrength">
-                <li id="lower">At least one lower character</li>
-                <li id="upper">At least one upper character</li>
+                <li id="lower">At least one lowercase character</li>
+                <li id="upper">At least one uppercase character</li>
                 <li id="number">At least one number</li>
-                <li id="special">At least one special character </li>
-                <li id="length">At least one 8 characters</li>
+                <li id="special">At least one special character</li>
+                <li id="length">At least 8 characters</li>
             </ul>
-        </div><br>
+
+        </div>
         <div class="fields">
             <label for="confirm-password">Confirm Password:</label>
             <input type="password" class="inputs" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+
         </div><br>
 
         <div class="button-groups">

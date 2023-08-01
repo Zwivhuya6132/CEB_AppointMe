@@ -54,7 +54,9 @@
 
     <div class="end-butt">
         <a href="page.php">
-            <input type="button" value="Return to Previous page" class="back butt" name="back">
+            <!-- <input type="button" value="Return to Previous page" class="back butt" name="back"> -->
+            <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;Return &nbsp;&nbsp;</button>
+
         </a>
     </div>
       
