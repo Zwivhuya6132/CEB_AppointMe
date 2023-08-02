@@ -343,3 +343,90 @@ ul{
     line-height: 2;
     font-size: medium;
   }
+
+  .status {
+    width: 45%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin: auto;
+  }
+
+  .status th,
+  .status td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .status th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  .status tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .action-td{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cancel-button, .reject-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cancel-button:hover, .reject-button:hover {
+    background-color: #d32f2f;
+  }
+
+  .end-butt {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.main-tit{
+    text-align: center;
+    font-size: 35px;
+}
+
+.class{
+    /* line-height: 2.5; 
+    border: 2px solid grey;
+    width: 40%;
+    margin: auto;
+    list-style-type: none; */
+    line-height: 2.5;
+    border: 2px solid grey;
+    width: 40%;
+    margin: auto;
+    list-style-type: none;
+    margin-top: 20px; /* Add some space between the slideshow and the navigation */
+    background-color: #f2f2f2; /* Set the background color */
+    border-radius: 8px; /* Add some rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.class li{
+    border-bottom: 2px solid grey;
+    padding: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.class li:hover {
+    background-color: #ddd;
+}
+
+.class .no-border{
+    border: none;
+}

@@ -17,22 +17,18 @@
         </div>
     </div>
 
-    <h1 style="text-align: center; font-size: 35px;">Appoint Me</h1>
-    <ul class="class" style="line-height: 2.5; border: 2px solid grey; width: 40%; margin: auto; list-style-type: none;">
+    <h1 class="main-tit">Appoint Me</h1>
+    <ul class="class">
         <a href="StartApp.php">
-          <li style="border-bottom: 2px solid grey;">Start Application</li>
+          <li >Start Application</li>
         </a>
 
         <a href="banking.php">
-          <li style="border-bottom: 2px solid grey;">Upload Proof of Banking</li>
+          <li>Upload Proof of Banking</li>
         </a>
 
         <a href="status.php">
-          <li style="border-bottom: 2px solid grey;">Check Status</li>
-        </a>
-
-        <a href="status.php">
-          <li style="border-bottom: px solid grey;">Cancel Application</li>
+          <li class="no-border">Check Status</li>
         </a>
     </ul>
 

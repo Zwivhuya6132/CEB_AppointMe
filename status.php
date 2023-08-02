@@ -1,5 +1,6 @@
 <?php
   include_once 'includes/header.php';
+  require_once 'includes/status.inc.php';
 ?>
 
     <div class="slideshow-container">
@@ -19,35 +20,37 @@
 
     <h1 style="text-align: center; font-size: 35px;">Appoint Me</h1>
 
-    <table>
+    
+
+    <table class="status">
         <thead>
           <tr>
             <th>Student number</th>
             <th>Initials and Surname</th>
-            <th>Application date</th>
+            <!-- <th>Application date</th> -->
             <th>Status</th>
             <th>Last action</th>
-            <th>action</th>
+            <th class="action-th">action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>218007280</td>
-            <td>Z Davhana</td>
-            <td>2023-05-28</td>
-            <td>Submitted</td>
-            <td>In progress</td>
-            <td><button class="cancel-button">Delete Application</button></td>
-          </tr>
+          <?php
 
-          <tr>
-            <td>218007280</td>
-            <td>Z Davhana</td>
-            <td>2023-05-28</td>
-            <td>Declined</td>
-            <td>Decline Email</td>
-            <td><button class="reject-button">Rejection Reason</button></td>
-          </tr>
+
+              while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<tr>";
+                  echo "<td>" . $row['StudentNo'] . "</td>";
+                  echo "<td>" . $row['Fname'][0]. ' '. $row['Lname']."</td>";
+                  echo "<td>" . $row['Status'] . "</td>";
+                  // echo "<td>" . $row['EmployeeNumber'] . "</td>";
+                  // echo "<td>" . $row['BankName'] . "</td>";
+                  // echo "<td>" . $row['ApplicationDate'] . "</td>";
+                  // echo "<td>" . $row['Status'] . "</td>";
+                  echo "<td>" . $row['LastAction'] . "</td>";
+                  echo "<td class=\"action-td\"><button class='cancel-button'>Delete Application</button></td>";
+                  echo "</tr>";
+              }
+            ?>
           <!-- Add more rows for each application here -->
         </tbody>
     </table>
@@ -59,27 +62,9 @@
 
         </a>
     </div>
-      
 
-<script src="all.js"  ></script>
-<script>
-    var cancelButtons = document.querySelectorAll('.cancel-button');
-    cancelButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        alert('You have successfully cancelled your application');
-        var row = this.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-      });
-      
-    });
-
-    var alertButton = document.querySelector('.reject-button');
-        alertButton.addEventListener('click', function() {
-          alert('You did not meet the minimum requirements');
-        });
-</script>
-<script>
-var slides = document.getElementsByClassName("slide");
+    <script>
+    var slides = document.getElementsByClassName("slide");
 var currentSlideIndex = 0;
 
 function showSlide(index) {
@@ -112,6 +97,7 @@ setInterval(nextSlide, 5000);
 showSlide(0);
 
 </script>
+      
 <?php
   include_once 'includes/footer.php';
 ?>

@@ -62,3 +62,51 @@ toggleBtn.onclick = function(){
       toggleBtn.classList.remove('hide');
     }
   };
+
+
+  let cancelButtons = document.querySelectorAll('.cancel-button');
+  cancelButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      alert('You have successfully cancelled your application');
+      var row = this.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    });
+    
+  });
+
+  let alertButton = document.querySelector('.reject-button');
+      alertButton.addEventListener('click', function() {
+        alert('You did not meet the minimum requirements');
+      });
+
+var slides = document.getElementsByClassName("slide");
+var currentSlideIndex = 0;
+
+function showSlide(index) {
+if (index < 0 || index >= slides.length) {
+  return;
+}
+
+// Hide all slides
+for (var i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";
+}
+
+// Show the selected slide
+slides[index].style.display = "block";
+currentSlideIndex = index;
+}
+
+function nextSlide() {
+let nextIndex = currentSlideIndex + 1;
+if (nextIndex >= slides.length) {
+  nextIndex = 0;
+}
+showSlide(nextIndex);
+}
+
+// Automatically advance to the next slide every 3 seconds
+setInterval(nextSlide, 5000);
+
+// Show the first slide initially
+showSlide(0);
