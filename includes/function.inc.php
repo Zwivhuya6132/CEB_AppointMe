@@ -208,13 +208,23 @@ function loginUser($conn, $StudentNumber, $Password){
 
 }
 
+function emptyBackground($EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment) {
+    $result = false;
 
-function tutorReg($conn,$StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment) {
-    $sql = "INSERT INTO tutor_reg (StudentNo, EmployeeStatus, EmployeeNumber, UjEmployment, IfYes, Appointed, Intermediary, Fuculty, EmploymentGroup, Appointment, StartDate, EndDate, Employment) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    if (empty($EmployeeStatus) || empty($EmployeeNumber) || empty($PreviouslyEmployed) || empty($FacultyDivision) || empty($AppointedAs) ||
+        empty($ConfirmCare) || empty($Faculty) || empty($EmploymentGroup) || empty($AppointmentCategory) || empty($StartDate) || empty($EndDate) || empty($ReasonTempEmployment)) {
+        $result = true;
+    }
+
+    return $result;
+}
+
+function tutorReg($conn, $StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment) {
+    $sql = "INSERT INTO tutor_reg (StudentNo, EmployeeStatus, EmployeeNumber, UjEmployment, IfYes, Appointed, Intermediary, Fuculty, EmploymentGroup, Appointment, StartDate, EndDate, Employment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: registration.php?error=stmtfailed");
+        header("location: ../registration.php?error=stmtfailed");
         exit();
     }
 
@@ -225,26 +235,48 @@ function tutorReg($conn,$StudentNo, $EmployeeStatus, $EmployeeNumber, $Previousl
     $EndDateFormatted = date('Y-m-d', strtotime($EndDate));
 
     // Bind the formatted dates to the statement
-    mysqli_stmt_bind_param($stmt, "issssssssssss",$StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDateFormatted, $EndDateFormatted, $ReasonTempEmployment);
+    mysqli_stmt_bind_param($stmt, "issssssssssss", $StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDateFormatted, $EndDateFormatted, $ReasonTempEmployment);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-
-    // Redirect to the login page or any other page as needed
-    header("location: ../pageThree.php");
+    // Redirect to the confirmation page or any other page as needed
+    header("location: ../banking.php");
     exit();
 }
 
-function emptyBackground($Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password, $CPassword) {
-    $result = "";
+function bankingDetails($conn, $StudentNo, $AccountHolder, $BankName, $Bankbranch, $BranchCode, $AccountNumber, $AccountType, $IbanCode, $SwiftCode, $ProofOfBanking) {
 
-    if(empty($Fname) || empty($Lname) || empty($IdNo) || empty($Tittle) || empty($Gender) ||
-     empty($Race) || empty($Nationality) || empty($HomeLang) || empty($EmailAdd) ||
-      empty($PhoneNo) || empty($StreetAdd) || empty($Town) || empty($City) || empty($PostalCode) || empty($Password) || empty($CPassword) ){
+    // Validate and handle the file upload
+    if ($_FILES['ProofOfBanking']['error'] === UPLOAD_ERR_OK) {
+        $filePath = "../uploads/" .$ProofOfBanking;
+        move_uploaded_file($_FILES['ProofOfBanking']['tmp_name'], $filePath);
+    } else {
+        header("location: ../banking.php?error=uploadfailed");
+        exit();
+    }
 
+    $sql = "INSERT INTO banking (StudentNo, AccountOwner, BankName, BankBranch, BranchCode, AccountNo, AccountType, Iban, Swift, ProofOfBanking) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../banking.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "isssssssss", $StudentNo, $AccountHolder, $BankName, $Bankbranch, $BranchCode, $AccountNumber, $AccountType, $IbanCode, $SwiftCode, $filePath);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    // Redirect to the confirmation page or any other page as needed
+    header("location: ../confirmation.php");
+    exit();
+}
+
+function emptyBanking($AccountHolder, $BankName, $Bankbranch, $BranchCode, $AccountNumber, $AccountType, $IbanCode, $SwiftCode, $ProofOfBanking) {
+    $result = false;
+
+    if (empty($AccountHolder) || empty($BankName) || empty($Bankbranch) || empty($BranchCode) || empty($AccountNumber) || empty($AccountType) || empty($IbanCode) || empty($SwiftCode) || empty($ProofOfBanking)) {
         $result = true;
-    }else{
-        $result = false;
     }
 
     return $result;

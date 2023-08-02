@@ -12,9 +12,10 @@
         <input type="text" class="StudentNumber login-inputs" id="StudentNumber" name="StudentNumber" placeholder="Student Number">
     </div>
 
-    <div class="fields">
+    <div class="fields toggle">
         <label for="password">Password</label><br>
         <input type="password" class="input login-inputs" id="password" name="password" placeholder="Enter your password">
+        <span id="toggleBtn"></span>
     </div>
 
     <div class="button-group">

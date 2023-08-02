@@ -338,3 +338,8 @@ ul{
     font-family: fontAwesome;
     display: inline-flex;
   }
+
+  .head-wel{
+    line-height: 2;
+    font-size: medium;
+  }

@@ -42,11 +42,11 @@
         ?>
     </div>
     <div class="head-right">
-        <small>
+        <small class="head-wel">
         <?php
             if(isset($_SESSION["StudentNo"])){
 
-                echo'<p>Welcome'.' '.$_SESSION["Fname"][0].' '. $_SESSION["Lname"].'</p>';
+                echo'<p>Welcome'.' '.$_SESSION["Tittle"].' '.$_SESSION["Fname"][0].' '. $_SESSION["Lname"].'</p>';
                 echo'<p>'.$_SESSION["EmailAdd"].'</p>';
             }else{
                 echo '<p>&nbsp;</p>';

@@ -62,28 +62,28 @@
                 <div class="fields">
                     <label for="title">Title:</label>
                     <select id="title" class="inputs" name="tittle">
-                        <option value="mr">Mr.</option>
-                        <option value="ms">Ms.</option>
-                        <option value="mrs">Mrs.</option>
-                        <option value="dr">Dr.</option>
+                        <option value="Mr">Mr.</option>
+                        <option value="Ms">Ms.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Dr">Dr.</option>
                     </select>
                 </div>
                 <div class="fields">
                     <label for="gender">Gender:</label>
                     <select id="gender" name="gender" class="inputs">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="fields">
                     <label for="race">Race:</label>
                     <select id="race" name="race" class="inputs">
-                        <option value="african">African</option>
-                        <option value="caucasian">Caucasian</option>
-                        <option value="asian">Asian</option>
-                        <option value="hispanic">Hispanic</option>
-                        <option value="other">Other</option>
+                        <option value="African">African</option>
+                        <option value="Vaucasian">Caucasian</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Hispanic">Hispanic</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
     $StudentNo = $_POST['StudentNumber'];
     $EmployeeStatus = $_POST['employee-status'];
@@ -13,23 +13,29 @@ if(isset($_POST['submit'])){
     $EmploymentGroup = $_POST['employment-group'];
     $AppointmentCategory = $_POST['appointment-category'];
     $StartDate = $_POST['start-date'];
-    $EndDate= $_POST['end-date'];
+    $EndDate = $_POST['end-date'];
     $ReasonTempEmployment = $_POST['reason-temp-employment'];
-    
-    // var_dump($Password);
-    // exit();
+
     require_once 'conn.inc.php';
     require_once 'function.inc.php';
 
-    // if(emptyLoginInputs( $StudentNumber, $Password) !== false){
-    //     header("location: ../login.php?error=emptyinput");
-    //     exit();
-    // }
+    // Check for empty inputs or any validation you need here
+    // For example:
+    if (emptyBackground($EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment) !== false) {
+        header("location: ../tutor.php?error=emptyinput");
+        exit();
+    }
 
-    // loginUser($conn, $StudentNumber, $Password);
-    tutorReg($conn,$StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment);
+    tutorReg($conn, $StudentNo, $EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment);
 
-} else{
+    // Save the form data to a session variable for later use in confirmation
+    // session_start();
+    // $_SESSION['tutor_data'] = $_POST;
+
+    // Redirect to the confirmation page
+    header("Location: ../confirm_tutor.php");
+    exit();
+} else {
     header("location: ../login.php");
     exit();
 }
