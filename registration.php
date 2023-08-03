@@ -150,6 +150,7 @@
         <div class="fields">
             <label for="confirm-password">Confirm Password:</label>
             <input type="password" class="inputs" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+            <a href="index.php">Already Registerd? <em>click Here</em></a>
 
         </div><br>
 

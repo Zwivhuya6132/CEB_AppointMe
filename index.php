@@ -16,7 +16,10 @@
         <label for="password">Password</label><br>
         <input type="password" class="input login-inputs" id="password" name="password" placeholder="Enter your password">
         <span id="toggleBtn"></span>
+        <a href="registration.php">Not registered? <em>click Here</em></a>
+
     </div>
+
 
     <div class="button-group">
         <button type="submit" class="submits-button login-inputs" name="submit">Login</button>
