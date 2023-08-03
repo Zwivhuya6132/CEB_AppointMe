@@ -75,24 +75,13 @@
 
 
     <div class="button-groups">
-        <a href="page.php">
             <!-- <input type="button" value="Return to Start" class="back butts" name="back"> -->
             <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;cancel&nbsp;&nbsp;</button>
-
-        </a>
-        <a href="page.php">
             <button type="submit" class="submits-button login-inputs" name="submit">Upload</button>
-
             <!-- <input type="button" value="Upload Document" class="submit butts" name="submit">  -->
         </a>
     </div>
     </form>
     <script src="all.js"  ></script>
-    <script>
-        var alertButton = document.querySelector('.submit');
-        alertButton.addEventListener('click', function() {
-          alert('You have successfuly uploaded your banking detail!');
-        });
-    </script>
 </body>
 </html>

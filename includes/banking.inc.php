@@ -21,4 +21,7 @@ if(isset($_POST['submit'])){
     }
 
     bankingDetails($conn, $StudentNumber, $AccountHolder, $BankName, $BankBranch, $BranchCode, $AccountNumber, $AccountType, $IbanCode, $SwiftCode, $ProofOfBanking);
+}else{
+    header("location: ../tutor.php");
+    exit();
 }

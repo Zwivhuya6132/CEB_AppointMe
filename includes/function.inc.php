@@ -268,7 +268,7 @@ function bankingDetails($conn, $StudentNo, $AccountHolder, $BankName, $Bankbranc
     mysqli_stmt_close($stmt);
 
     // Redirect to the confirmation page or any other page as needed
-    header("location: ../confirmation.php");
+    header("location: ../StartApp.php");
     exit();
 }
 

@@ -121,7 +121,7 @@ if (isset($_SESSION['tutor_form_submitted']) && $_SESSION['tutor_form_submitted'
     </div>
 
     <div class="button-groups">
-    <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button type="submit" class="submits-button login-inputs" name="back">&nbsp;&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;&nbsp;</button>
         <button type="submit" class="submits-button login-inputs" name="submit" >continue</button>
     </div>
 </form>

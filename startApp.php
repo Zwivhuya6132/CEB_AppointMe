@@ -164,9 +164,16 @@
     </div>
 
     <div class="button-groups">
-            <button class="submits-button login-inputs" name="back"><a href="page.php">&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;</a></button>
+    <a href="page.php">
+        <button class="submits-button login-inputs" type="button" onclick="window.location.href='page.php'">&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;</button>
+        <!-- <button class="submits-button login-inputs" name="back">&nbsp;&nbsp;&nbsp;back&nbsp;&nbsp;&nbsp;</button> -->
+    </a>
 
-            <button type="submit" class="submits-button login-inputs" name="submit"><a href="tutor.php">Continue</a></button>
+    <a href="tutor.php">
+        <button class="submits-button login-inputs" type="button" onclick="window.location.href='tutor.php'">&nbsp;&nbsp;&nbsp;next&nbsp;&nbsp;&nbsp;</button>
+        <!-- <button type="submit" class="submits-button login-inputs" name="submit">Continue</button> -->
+    </a>
+
     </div>
     </form>
 

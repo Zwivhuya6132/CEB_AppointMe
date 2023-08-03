@@ -36,6 +36,6 @@ if (isset($_POST['submit'])) {
     header("Location: ../confirm_tutor.php");
     exit();
 } else {
-    header("location: ../login.php");
+    header("location: ../startApp.php");
     exit();
 }
