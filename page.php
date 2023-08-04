@@ -23,13 +23,19 @@
           <li >Start Application</li>
         </a>
 
-        <a href="banking.php">
-          <li>Upload Proof of Banking</li>
+        <a href="status.php">
+          <li>Check Status / Cancel Application</li>
         </a>
 
         <a href="status.php">
-          <li class="no-border">Check Status</li>
+          <li class="no-border">Submit Monthly Claims</li>
         </a>
+
+        <!-- <div class="list-group" style="font-size:16px;">
+                <a href="2.html" class="list-group-item">Start Application</a>
+                <a href="6.html" class="list-group-item">Check Status / Cancel Application</a>
+                <a href="ResultsAcademic.aspx" class="list-group-item">Submit Monthly Claims</a>
+        </div> -->
     </ul>
 
     
