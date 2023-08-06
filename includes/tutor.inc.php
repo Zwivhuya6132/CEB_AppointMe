@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     // Check for empty inputs or any validation you need here
     // For example:
     if (emptyBackground($EmployeeStatus, $EmployeeNumber, $PreviouslyEmployed, $FacultyDivision, $AppointedAs, $ConfirmCare, $Faculty, $EmploymentGroup, $AppointmentCategory, $StartDate, $EndDate, $ReasonTempEmployment) !== false) {
-        header("location: ../tutor.php?error=emptyinput");
+        header("location: ../user/tutor.php?error=emptyinput");
         exit();
     }
 
@@ -33,9 +33,9 @@ if (isset($_POST['submit'])) {
     // $_SESSION['tutor_data'] = $_POST;
 
     // Redirect to the confirmation page
-    header("Location: ../confirm_tutor.php");
+    header("Location: ../user/confirm_tutor.php");
     exit();
 } else {
-    header("location: ../startApp.php");
+    header("location: ../user/startApp.php");
     exit();
 }

@@ -1,5 +1,5 @@
     <?php 
-        include_once "includes/header.php";
+        include_once "../includes/header.php";
     ?>
 
     <div style="text-align: center;">
@@ -178,5 +178,5 @@
     </form>
 
     <?php
-        include_once "includes/footer.php";
+        include_once "../includes/footer.php";
     ?>

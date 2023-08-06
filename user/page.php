@@ -1,5 +1,5 @@
   <?php
-    include_once 'includes/header.php';
+    include_once '../includes/header.php';
   ?>
 
     <div class="slideshow-container">
@@ -77,5 +77,5 @@ showSlide(0);
 
 </script>
 <?php
-  include_once 'includes/footer.php';
+  include_once '../includes/footer.php';
 ?>

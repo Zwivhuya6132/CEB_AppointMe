@@ -71,7 +71,7 @@ function userExist($conn, $IdNo){
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: registration.php?eror=stmtfailed");
+        header("location: user/registration.php?eror=stmtfailed");
         exit();
     }
 
@@ -95,7 +95,7 @@ function userLogs($conn, $StudentNumber){
     $stmt = mysqli_stmt_init($conn);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: registration.php?eror=stmtfailed");
+        header("location: ../user/registration.php?eror=stmtfailed");
         exit();
     }
 
@@ -119,7 +119,7 @@ function createUser($conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nati
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: registration.php?error=stmtfailed");
+        header("location: ../user/registration.php?error=stmtfailed");
         exit();
     }
 
@@ -138,7 +138,7 @@ function createUser($conn, $Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nati
     $_SESSION['user_id'] = $userId;
 
     // Redirect to the login page or any other page as needed
-    header("location: ../registered.php");
+    header("location: ../user/registered.php");
     exit();
 }
 
@@ -224,7 +224,7 @@ function tutorReg($conn, $StudentNo, $EmployeeStatus, $EmployeeNumber, $Previous
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../registration.php?error=stmtfailed");
+        header("location: ../user/registration.php?error=stmtfailed");
         exit();
     }
 
@@ -240,7 +240,7 @@ function tutorReg($conn, $StudentNo, $EmployeeStatus, $EmployeeNumber, $Previous
     mysqli_stmt_close($stmt);
 
     // Redirect to the confirmation page or any other page as needed
-    header("location: ../banking.php");
+    header("location: ../user/banking.php");
     exit();
 }
 
@@ -251,7 +251,7 @@ function bankingDetails($conn, $StudentNo, $AccountHolder, $BankName, $Bankbranc
         $filePath = "../uploads/" .$ProofOfBanking;
         move_uploaded_file($_FILES['ProofOfBanking']['tmp_name'], $filePath);
     } else {
-        header("location: ../banking.php?error=uploadfailed");
+        header("location: ../user/banking.php?error=uploadfailed");
         exit();
     }
 
@@ -259,7 +259,7 @@ function bankingDetails($conn, $StudentNo, $AccountHolder, $BankName, $Bankbranc
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../banking.php?error=stmtfailed");
+        header("location: ../user/banking.php?error=stmtfailed");
         exit();
     }
 
@@ -268,7 +268,7 @@ function bankingDetails($conn, $StudentNo, $AccountHolder, $BankName, $Bankbranc
     mysqli_stmt_close($stmt);
 
     // Redirect to the confirmation page or any other page as needed
-    header("location: ../StartApp.php");
+    header("location: ../user/StartApp.php");
     exit();
 }
 

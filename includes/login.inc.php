@@ -10,13 +10,13 @@ if(isset($_POST['submit'])){
     require_once 'function.inc.php';
 
     if(emptyLoginInputs( $StudentNumber, $Password) !== false){
-        header("location: ../login.php?error=emptyinput");
+        header("location: ../index.php?error=emptyinput");
         exit();
     }
 
     loginUser($conn, $StudentNumber, $Password);
 
 } else{
-    header("location: ../login.php");
+    header("location: ../index.php");
     exit();
 }

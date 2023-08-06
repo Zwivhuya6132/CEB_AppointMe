@@ -26,33 +26,33 @@ if (isset($_POST['submit'])){
     require_once 'function.inc.php';
 
     if(emptyInputs($Fname, $Lname, $IdNo, $Tittle, $Gender, $Race, $Nationality, $HomeLang, $EmailAdd, $PhoneNo, $StreetAdd, $Town, $City, $PostalCode, $Password, $CPassword) !== false){
-        header("location: ../registration.php?error=emptyinput");
+        header("location: ../user/registration.php?error=emptyinput");
         exit();
     }
 
     if(invalidPhone($PhoneNo) !== false){
-        header("location: ../registration.php?error=invalidphone");
+        header("location: ../user/registration.php?error=invalidphone");
         exit();
     }
 
     if(invalidEmail($EmailAdd) !== false){
-        header("location: ../registration.php?error=invalidemail");
+        header("location: ../user/registration.php?error=invalidemail");
         exit();
     }
 
     if(passworddMatch($Password, $CPassword) !== false){
-        header("location: ../registration.php?error=passdontmatch");
+        header("location: ../user/registration.php?error=passdontmatch");
         exit();
     }
 
     // Add the new password validation check
     if(!isPasswordValid($Password)) {
-        header("location: ../registration.php?error=invalidpassword");
+        header("location: ../user/registration.php?error=invalidpassword");
         exit();
     }
 
     if(userExist($conn, $IdNo) !== false){
-        header("location: ../registration.php?error=UserAlreadyExist");
+        header("location: ../user/registration.php?error=UserAlreadyExist");
         exit();
     }
 

@@ -1,10 +1,10 @@
 <?php 
-  include_once 'includes/conn.inc.php';
+  include_once 'conn.inc.php';
 
     // Check if the user is logged in
     if (!isset($_SESSION['StudentNo'])) {
         // Redirect to the login page or any other page as needed
-        header("Location: login.php");
+        header("Location: ../index.php");
         exit();
     }
 

@@ -16,12 +16,12 @@ if(isset($_POST['submit'])){
     require_once 'function.inc.php';
 
     if(emptyBanking($AccountHolder, $BankName, $BankBranch, $BranchCode, $AccountNumber, $AccountType, $IbanCode, $SwiftCode, $ProofOfBanking) !== false){
-        header("location: ../banking.php?error=emptybankingdetails");
+        header("location: ../user/banking.php?error=emptybankingdetails");
         exit();
     }
 
     bankingDetails($conn, $StudentNumber, $AccountHolder, $BankName, $BankBranch, $BranchCode, $AccountNumber, $AccountType, $IbanCode, $SwiftCode, $ProofOfBanking);
 }else{
-    header("location: ../tutor.php");
+    header("location: ../user/tutor.php");
     exit();
 }

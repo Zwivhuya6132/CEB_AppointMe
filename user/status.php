@@ -1,6 +1,6 @@
 <?php
-  include_once 'includes/header.php';
-  require_once 'includes/status.inc.php';
+  include_once '../includes/header.php';
+  require_once '../includes/status.inc.php';
 ?>
 
     <div class="slideshow-container">
@@ -99,5 +99,5 @@ showSlide(0);
 </script>
       
 <?php
-  include_once 'includes/footer.php';
+  include_once '../includes/footer.php';
 ?>

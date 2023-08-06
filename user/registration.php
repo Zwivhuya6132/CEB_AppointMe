@@ -1,5 +1,5 @@
 <?php
-    include_once "includes/header.php";
+    include_once "../includes/header.php";
 ?>
 
 <main>
@@ -169,5 +169,5 @@
 
 
 <?php
-    include_once "includes/footer.php";
+    include_once "../includes/footer.php";
 ?>

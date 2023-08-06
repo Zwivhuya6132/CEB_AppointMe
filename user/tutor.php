@@ -1,7 +1,7 @@
 <?php
-include_once 'includes/header.php';
-include_once 'includes/conn.inc.php'; // Include the database connection file
-include_once 'includes/function.inc.php'; // Include the functions file
+include_once '../includes/header.php';
+include_once '../includes/conn.inc.php'; // Include the database connection file
+include_once '../includes/function.inc.php'; // Include the functions file
 
 // Check if the user has already submitted the form
 $submitted = false;
@@ -127,5 +127,5 @@ if (isset($_SESSION['tutor_form_submitted']) && $_SESSION['tutor_form_submitted'
 </form>
 
 <?php
-include_once 'includes/footer.php';
+include_once '../includes/footer.php';
 ?>
