@@ -26,6 +26,8 @@
         <!-- <input type="button" value="Back to Start" class="back-button"> -->
         <!-- <input type="submit" value="Login" class="submit-button login-inputs" name="submit"> -->
     </div>
+
+    <?php ?>
 </form>
 
 <?php 

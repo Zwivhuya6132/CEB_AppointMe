@@ -188,7 +188,7 @@ function loginUser($conn, $StudentNumber, $Password){
         $_SESSION["PostalCode"] = $uidExists["PostalCode"];
         $_SESSION["Password"] = $uidExists["Password"];
         
-        header("location: ../page.php");
+        header("location: ../user/page.php");
         exit();
     } 
     // else {
