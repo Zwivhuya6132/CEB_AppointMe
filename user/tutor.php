@@ -3,6 +3,8 @@ include_once '../includes/header.php';
 include_once '../includes/conn.inc.php'; // Include the database connection file
 include_once '../includes/function.inc.php'; // Include the functions file
 
+$pageTitle = " - Tutor Registration";
+
 // Check if the user has already submitted the form
 $submitted = false;
 if (isset($_SESSION['tutor_form_submitted']) && $_SESSION['tutor_form_submitted']) {
@@ -18,7 +20,7 @@ if (isset($_SESSION['tutor_form_submitted']) && $_SESSION['tutor_form_submitted'
     <div class="progress">55%</div>
 </div>
 
-<form action="includes/tutor.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
+<form action="../includes/tutor.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
     <div class="d-div">
         <h1>Employment Background</h1>
     </div>

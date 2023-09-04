@@ -116,6 +116,7 @@ ul{
 
 /* Apply some styles to the slideshow images */
 .slideshow-container .slide img {
+
     width: 100%;
     height: auto;
 }

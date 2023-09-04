@@ -1,22 +1,10 @@
 <?php
   include_once '../includes/header.php';
   require_once '../includes/status.inc.php';
+  include_once '../includes/slides.php';
+
 ?>
 
-    <div class="slideshow-container">
-        <div class="slide">
-          <img src="images/uj.png" alt="Slide 1">
-        </div>
-        <div class="slide">
-            <img src="images/download (1).jpg" alt="Slide 1">
-        </div>
-        <div class="slide">
-          <img src="images/download.jpg" alt="Slide 2">
-        </div>
-        <div class="slide">
-          <img src="images/download.png" alt="Slide 3">
-        </div>
-    </div>
 
     <h1 style="text-align: center; font-size: 35px;">Appoint Me</h1>
 

@@ -9,7 +9,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ulink</title>
+    <?php
+        $pageTitle = "Ulink";
+        // Determine the current page and update the title accordingly
+        if (strpos($_SERVER['REQUEST_URI'], 'index.php') !== false) {
+            $pageTitle .= " - Login";
+        } elseif (strpos($_SERVER['REQUEST_URI'], 'registration.php') !== false) {
+            $pageTitle .= " - Registration"; 
+        }elseif (strpos($_SERVER['REQUEST_URI'], 'page.php') !== false) {
+            $pageTitle .= " - Apointme Application"; 
+        }elseif (strpos($_SERVER['REQUEST_URI'], 'StartApp.php') !== false) {
+            $pageTitle .= " - Start Application "; 
+        }elseif (strpos($_SERVER['REQUEST_URI'], 'tutor.php') !== false) {
+            $pageTitle .= " - Application Form"; 
+        }elseif (strpos($_SERVER['REQUEST_URI'], 'banking.php') !== false) {
+            $pageTitle .= " - Banking Details"; 
+        }elseif (strpos($_SERVER['REQUEST_URI'], 'confirm_tutor.php') !== false) {
+            $pageTitle .= " - Application Confirmation"; 
+        }elseif (strpos($_SERVER['REQUEST_URI'], 'status.php') !== false) {
+            $pageTitle .= " - Application Status"; 
+        }
+
+        echo "<title>$pageTitle</title>";
+    ?>
+    <link rel="website icon" type="png" href="../images/uj.png">
     <link rel="website icon" type="png" href="images/uj.png">
     <link rel="stylesheet" href="all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +47,15 @@
 <header class="head">
     <div class="head-left">
         <?php
-            if ($page = 'login') {
-                echo '<a href="index.php"><img src="images/uj.png" alt="uj logo" class="logo"></a>';
-            } else {
+            if (isset($_SESSION["StudentNo"])) {
                 echo '<a href="../index.php"><img src="../images/uj.png" alt="uj logo" class="logo"></a>';
+            } elseif(strpos($_SERVER['REQUEST_URI'], 'registration.php') !== false) {
+                echo '<a href="../index.php"><img src="../images/uj.png" alt="uj logo" class="logo"></a>';
+            }else {
+                echo '<a href="index.php"><img src="images/uj.png" alt="uj logo" class="logo"></a>';
             }
         ?>
-        <!-- <img src="../images/uj.png" alt="uj logo" class="logo"> -->
-        <?php
+                <?php
         if (isset($_SESSION["StudentNo"])) {
             echo '
                 <ul class="nav-links">
@@ -54,16 +78,13 @@
         <small class="head-wel">
         <?php
             if(isset($_SESSION["StudentNo"])){
-
-                echo'<p>Welcome'.' '.$_SESSION["Tittle"].' '.$_SESSION["Fname"][0].' '. $_SESSION["Lname"].'</p>';
-                echo'<p>'.$_SESSION["EmailAdd"].'</p>';
-            }else{
+                echo '<p>Welcome'.' '.$_SESSION["Tittle"].' '.$_SESSION["Fname"][0].' '. $_SESSION["Lname"].'</p>';
+                echo '<p>'.$_SESSION["EmailAdd"].'</p>';
+            } else {
                 echo '<p>&nbsp;</p>';
                 echo '<p>&nbsp;</p>';
             }
         ?>
-            <!-- <p>Welcome Mr Z Davhana</p>
-            <p>zwivhuyadavhana6132@gmail.com</p> -->
         </small>
         <small class="big-ulink">
             <h1>uLink</h1>

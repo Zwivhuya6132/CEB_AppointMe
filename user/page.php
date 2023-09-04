@@ -1,21 +1,7 @@
   <?php
     include_once '../includes/header.php';
+    include_once '../includes/slides.php';
   ?>
-
-    <div class="slideshow-container">
-        <div class="slide">
-          <img src="images/uj.png" alt="Slide 1">
-        </div>
-        <div class="slide">
-            <img src="images/download (1).jpg" alt="Slide 1">
-        </div>
-        <div class="slide">
-          <img src="images/download.jpg" alt="Slide 2">
-        </div>
-        <div class="slide">
-          <img src="images/download.png" alt="Slide 3">
-        </div>
-    </div>
 
     <h1 class="main-tit">Appoint Me</h1>
     <ul class="class">
