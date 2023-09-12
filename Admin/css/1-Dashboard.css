@@ -8,6 +8,25 @@
     align-items: center;
 }
 
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    /* position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: #0066cc;
+}
+
 .head {
     background-color: #2e1a46;
     height: 120px;

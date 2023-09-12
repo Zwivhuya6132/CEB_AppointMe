@@ -8,6 +8,24 @@
     align-items: center;
 }
 
+.cancel-button,
+.reject-button {
+padding: 6px 12px;
+font-size: 14px;
+background-color: #e65300;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.cancel-button:hover,
+.reject-button:hover{
+border: 2px solid #e65300;
+background-color: #ffffff;
+color: #e65300;
+}
+
 .head {
     background-color: #2e1a46;
     height: 120px;
