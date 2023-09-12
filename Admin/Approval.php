@@ -24,7 +24,7 @@
                 <td>Mabaso</td>
                 <td>13/08/2017</td>
                 <td>
-                    <center> <button class="button">Reverse approval</button> </center>
+                    <center> <btn class="btn">Reverse approval</btn> </center>
                 </td>
             </tr>
             <tr>
@@ -33,7 +33,7 @@
                 <td>Van Der Klerk</td>
                 <td>13/08/2017</td>
                 <td>
-                    <center> <button class="button">Reverse approval</button> </center>
+                    <center> <btn class="btn">Reverse approval</btn> </center>
                 </td>
             </tr>
             <tr>
@@ -42,7 +42,7 @@
                 <td>Molefe</td>
                 <td>13/08/2017</td>
                 <td>
-                    <center> <button class="button">Reverse approval</button> </center>
+                    <center> <btn class="btn">Reverse approval</btn> </center>
                 </td>
             </tr>
             <tr>
@@ -51,20 +51,13 @@
                 <td>Moodley</td>
                 <td>13/08/2017</td>
                 <td>
-                    <center> <button class="button">Reverse approval</button> </center>
+                    <center> <btn class="btn">Reverse approval</btn> </center>
                 </td>
             </tr>
         </table>
 
     </div>
 
-
-
-
-
-
-
-    <script src="all.js"></script>
-</body>
-
-</html>
+    <?php 
+        include_once 'includes/footer.php';
+    ?>

@@ -10,10 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/1-Dashboard.css">
-    <link rel="stylesheet" href="css/2-Application.css">
-    <link rel="stylesheet" href="css/3-Approval.css">
-    <link rel="stylesheet" href="css/4-Disapproval.css">
+    <link rel="stylesheet" href="css/admin.css">
+
 
     <?php
         $pageTitle = "Ulink";

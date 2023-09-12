@@ -24,7 +24,7 @@
                 <th>
                     <center>
                         <a href="fullApp.html">
-                            <input type="button" value="View Application" class="reject-button butt">
+                            <input type="button" value="View Application" class="reject-button btn">
                         </a>
                     </center>
                 </th>
@@ -36,7 +36,7 @@
                 <th>
                     <center>
                         <a href="fullApp.html">
-                            <input type="button" value="View Application" class="reject-button butt">
+                            <input type="button" value="View Application" class="reject-button btn">
                         </a>
                     </center>
                 </th>
@@ -48,7 +48,7 @@
                 <th>
                     <center>
                         <a href="fullApp.html">
-                            <input type="button" value="View Application" class="reject-button butt">
+                            <input type="button" value="View Application" class="reject-button btn">
                         </a>
                     </center>
                 </th>
@@ -60,7 +60,7 @@
                 <th>
                     <center>
                         <a href="fullApp.html">
-                            <input type="button" value="View Application" class="reject-button butt">
+                            <input type="button" value="View Application" class="reject-button btn">
                         </a>
                     </center>
                 </th>
@@ -72,7 +72,7 @@
                 <th>
                     <center>
                         <a href="fullApp.html">
-                            <input type="button" value="View Application" class="reject-button butt">
+                            <input type="button" value="View Application" class="reject-button btn">
                         </a>
                     </center>
                 </th>
@@ -84,7 +84,7 @@
                 <th>
                     <center>
                         <a href="fullApp.html">
-                            <input type="button" value="View Application" class="reject-button butt">
+                            <input type="button" value="View Application" class="reject-button btn">
                         </a>
                     </center>
                 </th>
@@ -92,18 +92,8 @@
 
         </table>
 
-
-
     </div>
 
-
-
-
-
-
-
-
-    <script src="all.js"></script>
-</body>
-
-</html>
+    <?php 
+        include_once 'includes/footer.php';
+    ?>
