@@ -98,7 +98,7 @@ a{
         <div class="result">
             <strong>Student Number:</strong> <?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "N/A"; ?>
         </div>
-        <button class="buts" onclick="window.location.href='index.php'"><a href="includes/logout.inc.php">Go to Login</a></button>
+        <button class="buts" onclick="window.location.href='index.php'"><a href="../includes/logout.inc.php">Go to Login</a></button>
     </div>
 
     <?php

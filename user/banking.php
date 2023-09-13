@@ -10,7 +10,7 @@
     </div>
 
 
-    <form action="includes/banking.inc.php" method="POST" enctype="multipart/form-data"  name="form-reg" class="regform">
+    <form action="../includes/banking.inc.php" method="POST" enctype="multipart/form-data"  name="form-reg" class="regform">
 
     <div class="d-div">
         <h1>Banking Details</h1>

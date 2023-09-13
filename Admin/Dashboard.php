@@ -10,44 +10,34 @@
                 <h1 class="ActiveTutors-title" style="text-align: center;"> Applications </h1>
 
                 <table class="table-center">
-
                     <tr>
                         <th>Student Number</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                     </tr>
-                    <tr>
-                        <td>907904075</td>
-                        <td>Cyrila</td>
-                        <td>Zaruba</td>
-                    </tr>
-                    <tr>
-                        <td>098478183</td>
-                        <td>Alva</td>
-                        <td>Hájek</td>
-                    </tr>
-                    <tr>
-                        <td>410373746</td>
-                        <td>Ovidius</td>
-                        <td>Brabec</td>
-                    </tr>
-                    <tr>
-                        <td>993558691</td>
-                        <td>Zachariáš</td>
-                        <td>Jiránek</td>
 
-                    </tr>
+                    <?php
+                        include_once 'includes/conn.inc.php';
+                        $sql = "SELECT students.StudentNo, students.FName, students.LName, tutor_reg.UjEmployment
+                                FROM students
+                                INNER JOIN tutor_reg ON students.StudentNo = tutor_reg.StudentNo";
+                        $result = $conn->query($sql);
+
+                        while($row = mysqli_fetch_assoc($result)){
+                    ?>
+
                     <tr>
-                        <td>230496102</td>
-                        <td>Lea</td>
-                        <td>Castillo</td>
+                        <td><?php echo $row['StudentNo'];?></td>
+                        <td><?php echo $row['FName'];?></td>
+                        <td><?php echo $row['LName'];?></td>
                     </tr>
 
+                    <?php } ?>
                 </table>
             </div>
 
 
-            <div class="div-approved-applications">
+            <div class="div-applications">
                 <h1 class="ActiveTutors-title" style="text-align: center;"> Approved Applications </h1>
 
                 <table class="table-center">
@@ -57,32 +47,26 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                     </tr>
-                    <tr>
-                        <td>202209613</td>
-                        <td>Santi</td>
-                        <td>Lorenzo</td>
-                    </tr>
-                    <tr>
-                        <td>433394902</td>
-                        <td>Bautista</td>
-                        <td>Montero</td>
-                    </tr>
-                    <tr>
-                        <td>593844401</td>
-                        <td>Consuelo</td>
-                        <td>Castillo</td>
-                    </tr>
+
+                    <?php
+                        include_once 'includes/conn.inc.php';
+                        $sql = "SELECT students.StudentNo, students.FName, students.LName, tutor_reg.UjEmployment
+                                FROM students
+                                INNER JOIN tutor_reg ON students.StudentNo = tutor_reg.StudentNo 
+                                WHERE tutor_reg.status = 'approved'";
+                        $result = $conn->query($sql);
+
+                        while($row = mysqli_fetch_assoc($result)){
+                    ?>
 
                     <tr>
-                        <td>484623423</td>
-                        <td>Kim</td>
-                        <td>May</td>
+                        <td><?php echo $row['StudentNo'];?></td>
+                        <td><?php echo $row['FName'];?></td>
+                        <td><?php echo $row['LName'];?></td>
                     </tr>
-                    <tr>
-                        <td>297434762</td>
-                        <td>Kele</td>
-                        <td>Bee</td>
-                    </tr>
+
+                    <?php } ?>
+
 
                 </table>
             </div>
@@ -99,6 +83,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
             </tr>
+
             <tr>
                 <td>219362512</td>
                 <td>Maria</td>
@@ -129,6 +114,7 @@
                 <td>Ermentrude</td>
                 <td>Stork</td>
             </tr>
+            
 
         </table>
 
@@ -142,37 +128,24 @@
                 <th>First Name</th>
                 <th>Last Name</th>
             </tr>
-            <tr>
-                <td>221006195</td>
-                <td>Kerin</td>
-                <td>Moodley</td>
-            </tr>
-            <tr>
-                <td>091026058</td>
-                <td>Eleonora</td>
-                <td>Delete</td>
-            </tr>
-            <tr>
-                <td>476933746</td>
-                <td>Brock</td>
-                <td>Wabey</td>
-            </tr>
-            <tr>
-                <td>998924691</td>
-                <td>Andra</td>
-                <td>Nortcliffe</td>
+            <?php
+                include_once 'includes/conn.inc.php';
+                $sql = "SELECT students.StudentNo, students.FName, students.LName, tutor_reg.UjEmployment
+                        FROM students
+                        INNER JOIN tutor_reg ON students.StudentNo = tutor_reg.StudentNo 
+                        WHERE tutor_reg.status = 'Pending'";
+                $result = $conn->query($sql);
 
-            </tr>
+                while($row = mysqli_fetch_assoc($result)){
+            ?>
+
             <tr>
-                <td>230563102</td>
-                <td>Yoshi</td>
-                <td>Tannamuri</td>
+                <td><?php echo $row['StudentNo'];?></td>
+                <td><?php echo $row['FName'];?></td>
+                <td><?php echo $row['LName'];?></td>
             </tr>
-            <tr>
-                <td>745459263</td>
-                <td>Giovanni</td>
-                <td>Rovelli</td>
-            </tr>
+
+            <?php } ?>
 
         </table>
     </div>

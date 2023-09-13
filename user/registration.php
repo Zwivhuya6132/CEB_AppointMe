@@ -3,7 +3,7 @@
 ?>
 
 <main>
-<form action="includes/register.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
+<form action="../includes/register.inc.php" method="POST" enctype="multipart/form-data" name="form-reg" class="regform">
 
         <div class="reg-error">
             <?php

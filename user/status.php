@@ -17,7 +17,6 @@
             <th>Initials and Surname</th>
             <!-- <th>Application date</th> -->
             <th>Status</th>
-            <th>Last action</th>
             <th class="action-th">action</th>
           </tr>
         </thead>
@@ -34,7 +33,7 @@
                   // echo "<td>" . $row['BankName'] . "</td>";
                   // echo "<td>" . $row['ApplicationDate'] . "</td>";
                   // echo "<td>" . $row['Status'] . "</td>";
-                  echo "<td>" . $row['LastAction'] . "</td>";
+
                   echo "<td class=\"action-td\"><button class='cancel-button'>Delete Application</button></td>";
                   echo "</tr>";
               }
