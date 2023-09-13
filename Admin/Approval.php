@@ -17,43 +17,28 @@
                 <th>Approval date</th>
                 <th>Action</th>
             </tr>
+            <?php
+                include_once 'includes/conn.inc.php';
+                $sql = "SELECT students.*, tutor_reg.*
+                FROM students
+                INNER JOIN tutor_reg ON students.StudentNo = tutor_reg.StudentNo 
+                WHERE tutor_reg.status = 'approved'";
+                $result = $conn->query($sql);
+
+                while($row = mysqli_fetch_assoc($result)){
+            ?>
 
             <tr>
-                <td>22182321</td>
-                <td>Luyanda</td>
-                <td>Mabaso</td>
-                <td>13/08/2017</td>
+                <td><?php echo $row['StudentNo'];?></td>
+                <td><?php echo $row['Fname'];?></td>
+                <td><?php echo $row['Lname'];?></td>
+                <td><?php echo $row['EndDate'];?></td>
                 <td>
                     <center> <btn class="btn">Reverse approval</btn> </center>
                 </td>
             </tr>
-            <tr>
-                <td>22182321</td>
-                <td>Roland</td>
-                <td>Van Der Klerk</td>
-                <td>13/08/2017</td>
-                <td>
-                    <center> <btn class="btn">Reverse approval</btn> </center>
-                </td>
-            </tr>
-            <tr>
-                <td>22182321</td>
-                <td>Helen</td>
-                <td>Molefe</td>
-                <td>13/08/2017</td>
-                <td>
-                    <center> <btn class="btn">Reverse approval</btn> </center>
-                </td>
-            </tr>
-            <tr>
-                <td>22182321</td>
-                <td>Karissa</td>
-                <td>Moodley</td>
-                <td>13/08/2017</td>
-                <td>
-                    <center> <btn class="btn">Reverse approval</btn> </center>
-                </td>
-            </tr>
+
+            <?php } ?>
         </table>
 
     </div>

@@ -46,7 +46,7 @@
     <nav class="sidebar">
         <a <?php if($page == "Dashboard"){ echo 'class="active"';} ?> href="Dashboard.php">Dashboard</a>
         <a <?php if($page == "Application"){ echo 'class="active"';} ?> href="Application.php">Application</a>
-        <a <?php if($page == "Approval"){ echo 'class="active"';} ?> href="Approval.php">Approval</a>
-        <a <?php if($page == "Disapproval"){ echo 'class="active"';} ?> href="Disapproval.php">Disapproval</a>
-        <a href="../page.php">Log Out</a>
+        <a <?php if($page == "Approval"){ echo 'class="active"';} ?> href="Approval.php">Approved Applications</a>
+        <a <?php if($page == "Disapproval"){ echo 'class="active"';} ?> href="Disapproval.php">Disapproved Applications</a>
+        <a href="includes/logout.inc.php">Log Out</a>
     </nav>
